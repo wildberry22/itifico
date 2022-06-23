@@ -1,0 +1,48 @@
+
+/* font-family: 'Bitter', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;900&display=swap');
+
+
+/* font-family: 'Consolas', monospace; */
+@font-face {
+  font-family: 'Consolas';
+  src: url("../fonts/Consolas.woff2") format("woff2"),
+       url("../fonts/Consolas.woff") format("woff"),
+       url("../fonts/Consolas.ttf") format("ttf");
+  font-weight: 400;
+}
+
+
+/* font-family: 'SegoeUI', sans-serif; */
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI.woff2") format("woff2"),
+       url("../fonts/SegoeUI.woff") format("woff"),
+       url("../fonts/SegoeUI.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-Italic.woff2") format("woff2"),
+       url("../fonts/SegoeUI-Italic.woff") format("woff"),
+       url("../fonts/SegoeUI-Italic.ttf") format("ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-SemiBold.woff2") format("woff2"),
+       url("../fonts/SegoeUI-SemiBold.woff") format("woff"),
+       url("../fonts/SegoeUI-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-Bold.woff2") format("woff2"),
+       url("../fonts/SegoeUI-Bold.woff") format("woff"),
+       url("../fonts/SegoeUI-Bold.ttf") format("ttf");
+  font-weight: 700;
+}

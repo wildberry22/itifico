@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;900&display=swap");
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+/*========== Font family ==========*/
+/*========== Font weight ==========*/
+/*========== Font size ==========*/
+/*========== Colors ==========*/
+/*========== Z-index ==========*/
+/*========== Other ==========*/
+/* font-family: 'Bitter', serif; */
+/* font-family: 'Consolas', monospace; */
+@font-face {
+  font-family: 'Consolas';
+  src: url("../fonts/Consolas.woff2") format("woff2"), url("../fonts/Consolas.woff") format("woff"), url("../fonts/Consolas.ttf") format("ttf");
+  font-weight: 400; }
+
+/* font-family: 'SegoeUI', sans-serif; */
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI.woff2") format("woff2"), url("../fonts/SegoeUI.woff") format("woff"), url("../fonts/SegoeUI.ttf") format("ttf");
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-Italic.woff2") format("woff2"), url("../fonts/SegoeUI-Italic.woff") format("woff"), url("../fonts/SegoeUI-Italic.ttf") format("ttf");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-SemiBold.woff2") format("woff2"), url("../fonts/SegoeUI-SemiBold.woff") format("woff"), url("../fonts/SegoeUI-SemiBold.ttf") format("ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url("../fonts/SegoeUI-Bold.woff2") format("woff2"), url("../fonts/SegoeUI-Bold.woff") format("woff"), url("../fonts/SegoeUI-Bold.ttf") format("ttf");
+  font-weight: 700; }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "SegoeUI", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 144%;
+  color: #606268; }
+
+.container {
+  width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+/*========== Selection ==========*/
+::-moz-selection {
+  color: #FFFFFF;
+  background: #E36F59; }
+
+::selection {
+  color: #FFFFFF;
+  background: #E36F59; }
+
+/*========== Buttons ==========*/
+.btn {
+  background: #E36F59;
+  border-radius: 8px;
+  border: none;
+  padding: 20px 35px;
+  font-family: "Bitter", serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #FFFFFF;
+  transition: .2s ease;
+  display: inline-block;
+  cursor: pointer; }
+  .btn:hover {
+    box-shadow: 0px 14px 14px rgba(190, 39, 39, 0.14); }
+  .btn:active {
+    background-color: #C7523C;
+    box-shadow: none; }
+  .btn:focus {
+    outline-color: #C7523C; }
+  .btn-outline {
+    border: 2px solid #E36F59;
+    color: #E36F59;
+    background: #FFFFFF; }
+    .btn-outline:hover {
+      color: #FFFFFF;
+      background: #E36F59;
+      box-shadow: none; }
+    .btn-outline:active {
+      border: 2px solid #C7523C;
+      background-color: #C7523C;
+      box-shadow: none; }
+
+/*========== Inputs ==========*/
+input {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid #E2E7EB;
+  border-radius: 8px;
+  padding: 21px 80px 23px 25px;
+  font-family: "SegoeUI", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #23262D;
+  outline-color: #C4CACF;
+  transition: .2s ease; }
+  input::placeholder {
+    color: #606268; }
+  input:hover {
+    border-color: #C4CACF; }
+  input:focus {
+    outline: none;
+    border-color: #C4CACF; }

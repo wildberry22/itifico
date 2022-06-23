@@ -1,0 +1,104 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $segoeUI-font;
+  font-weight: $font-regular;
+  font-size: $fz-5;
+  line-height: 144%;
+  color: $txt-color;
+}
+
+.container {
+  width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+/*========== Selection ==========*/
+::-moz-selection {
+  color: $white-color;
+  background: $red-color;
+}
+::selection {
+  color: $white-color;
+  background: $red-color;
+}
+
+
+/*========== Buttons ==========*/
+.btn {
+  background: $red-color;
+  border-radius: 8px;
+  border: none;
+  padding: 20px 35px;
+  font-family: $bitter-font;
+  font-weight: $font-semibold;
+  font-size: $fz-6;
+  line-height: 120%;
+  color: $white-color;
+  transition: .2s ease;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 14px 14px rgba(190, 39, 39, 0.14);
+  }
+  &:active {
+    background-color: $red-dark-color;
+    box-shadow: none;
+  }
+  &:focus {
+    outline-color: $red-dark-color;
+  }
+
+  &-outline {
+    border: 2px solid $red-color;
+    color: $red-color;
+    background: $white-color;
+    &:hover {
+      color: $white-color;
+      background: $red-color;
+      box-shadow: none;
+    }
+    &:active {
+      border: 2px solid $red-dark-color;
+      background-color: $red-dark-color;
+      box-shadow: none;
+    }
+  }
+}
+
+
+/*========== Inputs ==========*/
+input {
+  position: relative;
+  background: $white-color;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  padding: 21px 80px 23px 25px;
+  font-family: $segoeUI-font;
+  font-weight: $font-regular;
+  font-size: $fz-6;
+  line-height: 100%;
+  color: $black-color;
+  outline-color: $gray2-color;
+  transition: .2s ease;
+  &::placeholder {
+    color: $txt-color;
+  }
+  &:hover {
+    border-color: $gray2-color;
+  }
+  &:focus {
+    outline: none;
+    border-color: $gray2-color;
+  }
+}
