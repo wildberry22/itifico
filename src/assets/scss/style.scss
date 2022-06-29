@@ -1,5 +1,9 @@
 @import 'reset';
 @import 'variables';
 @import 'fonts';
+@import 'animations';
 @import 'general';
 
+
+@import 'blocks/header/header';
+@import 'blocks/main-page/main-page';

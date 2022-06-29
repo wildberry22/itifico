@@ -90,10 +90,48 @@
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/stickyHeader.js */ "./src/assets/js/modules/stickyHeader.js");
 
+document.addEventListener("DOMContentLoaded", () => {
+  Object(_modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+});
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/stickyHeader.js":
+/*!***********************************************!*\
+  !*** ./src/assets/js/modules/stickyHeader.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return stickyHeader; });
+function stickyHeader() {
+  let lastScroll = 0;
+  const defaultOffset = 400;
+  const header = document.querySelector('.header');
+
+  const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+
+  const containHide = () => header.classList.contains('hide');
+
+  window.addEventListener('scroll', () => {
+    if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+      header.classList.add('hide');
+    } else if (scrollPosition() < lastScroll && containHide()) {
+      header.classList.remove('hide');
+    }
+
+    lastScroll = scrollPosition();
+  });
+}
 
 /***/ })
 

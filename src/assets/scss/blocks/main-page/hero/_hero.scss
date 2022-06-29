@@ -1,0 +1,158 @@
+.hero {
+  margin-top: 80px;
+  padding: 40px 0 80px;
+  &-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    &::before {
+      content: 'ITifico';
+      position: absolute;
+      top: 225px;
+      left: -365px;
+      transform: rotate(-90deg);
+      font-family: $bitter-font;
+      font-weight: $font-black;
+      font-size: 130px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px $black-color;
+    }
+  }
+  &-content {
+    &__title {
+      max-width: 630px;
+      font-family: $bitter-font;
+      font-weight: $font-bold;
+      font-size: $fz-1;
+      line-height: 120%;
+      letter-spacing: 0.005em;
+      color: $black-color;
+      margin: 25px 0;
+      span {
+        color: $red-color;
+      }
+    }
+    &__descr {
+      max-width: 510px;
+      font-family: $segoeUI-font;
+      font-weight: $font-regular;
+      font-size: $fz-5;
+      line-height: 144%;
+      color: $txt-color;
+      margin-bottom: 50px;
+    }
+    &__btn {
+      margin-bottom: 73px;
+      padding-right: 95px;
+      position: relative;
+      &::after {
+        content: url("data:image/svg+xml;charset=UTF-8,<svg width='40' height='12' viewBox='0 0 40 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M40 6.00012L34 12L34 7.18093L34 4.81915L34 1.36127e-06L40 6.00012Z' fill='%23FFFFFF'/><line y1='-1' x2='34.4444' y2='-1' transform='matrix(-1 -1.66103e-07 -1.84559e-07 1 34.4453 7)' stroke='%23FFFFFF' stroke-width='2'/></svg>");
+        position: absolute;
+        top: 50%;
+        right: 35px;
+        transform: translateY(-45%);
+        transition: right .2s;
+      }
+      &:hover {
+        &::after {
+          right: 25px;
+        }
+      }
+    }
+  }
+  &-scroll {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 13px;
+      right: -20px;
+      width: 80%;
+      height: 1px;
+      background: #D8DFDA;
+      pointer-events: none;
+    }
+    a {
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 15px;
+      text-decoration: none;
+      &:hover {
+        .hero-scroll__mouse {
+          span {
+            top: 10px;
+          }
+        }
+        .hero-scroll__text {
+          color: $red-color;
+        }
+      }
+    }
+    
+    &__mouse {
+      position: relative;
+      width: 20px;
+      height: 30px;
+      border-radius: 10px;
+      border: 1px solid $black-color;
+      span {
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 2px;
+        height: 6px;
+        background: $red-color;
+        border-radius: 2px;
+        transition: .2s linear;
+      }
+    }
+    &__text {
+      font-size: $fz-7;
+      line-height: 100%;
+      color: $black-color;
+      transition: .2s linear;
+    }
+  } 
+  &-img {
+    position: relative;
+    &::before, &::after {
+      position: absolute;
+      font-family: $bitter-font;
+      font-weight: $font-black;
+      font-size: 100px;
+      line-height: 120px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px $black-color;
+      z-index: -1;
+    }
+    &::before {
+      content: '[ / ]';
+      bottom: 80px;
+      left: -90px;
+    }
+    &::after {
+      content: '{ / }';
+      top: 0;
+      right: -70px;
+    }
+    img {
+      width: 590px;
+      max-height: 590px;
+      object-fit: cover;
+    }
+  } 
+ 
+}

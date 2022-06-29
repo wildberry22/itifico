@@ -9,15 +9,17 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  padding-top: 10px;
   font-family: $segoeUI-font;
   font-weight: $font-regular;
   font-size: $fz-5;
   line-height: 144%;
   color: $txt-color;
+  overflow-x: hidden;
 }
 
 .container {
-  width: 1260px;
+  max-width: 1260px;
   padding: 0 15px;
   margin: 0 auto;
 }
