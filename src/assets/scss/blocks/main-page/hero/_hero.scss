@@ -1,6 +1,17 @@
 .hero {
+  position: relative;
   margin-top: 80px;
   padding: 40px 0 80px;
+  &::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-1.svg');
+    position: absolute;
+    top: 30px;
+    left: -100px;
+    z-index: -1;
+  }
   &-wrapper {
     position: relative;
     display: flex;

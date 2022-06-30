@@ -96,10 +96,57 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/stickyHeader.js */ "./src/assets/js/modules/stickyHeader.js");
+/* harmony import */ var _modules_blogCardStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/blogCardStyle */ "./src/assets/js/modules/blogCardStyle.js");
+
 
 document.addEventListener("DOMContentLoaded", () => {
   Object(_modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_blogCardStyle__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const swiper = new Swiper('.articles-wrapper.swiper', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    draggable: false,
+    allowTouchMove: false,
+    pagination: {
+      el: ".articles-pagination.swiper-pagination",
+      clickable: true,
+      dynamicBullets: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/blogCardStyle.js":
+/*!************************************************!*\
+  !*** ./src/assets/js/modules/blogCardStyle.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return blogCardStyle; });
+function blogCardStyle() {
+  const cards = document.querySelectorAll('.blog-card');
+  cards.forEach(card => {
+    const title = card.querySelector('.blog-card__title');
+    const description = card.querySelector('.blog-card__descr');
+    const img = card.querySelector('.blog-card__img');
+    title.querySelector('a').innerText.length > 70 ? title.querySelector('a').innerText = title.querySelector('a').innerText.slice(0, 70) + '...' : title.querySelector('a').innerText;
+    description.innerText.length > 105 ? description.innerText = description.innerText.slice(0, 105) + '...' : description.innerText;
+    title.addEventListener('mouseover', () => {
+      img.classList.add('hover');
+    });
+    title.addEventListener('mouseout', () => {
+      img.classList.remove('hover');
+    });
+  });
+}
 
 /***/ }),
 

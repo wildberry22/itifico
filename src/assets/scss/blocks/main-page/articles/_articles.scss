@@ -1,0 +1,29 @@
+.articles {
+  padding: 80px 0;
+  position: relative;
+  &::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-2.svg');
+    position: absolute;
+    top: 40px;
+    right: -152px;
+    z-index: -1;
+  }
+  &-container {
+    max-width: 1290px;
+  }
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  &-wrapper {
+    padding: 0 15px;
+  }
+  &-slider {
+    padding-bottom: 70px;
+  }
+}
