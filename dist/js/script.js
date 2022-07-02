@@ -96,13 +96,20 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/stickyHeader.js */ "./src/assets/js/modules/stickyHeader.js");
-/* harmony import */ var _modules_blogCardStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/blogCardStyle */ "./src/assets/js/modules/blogCardStyle.js");
+/* harmony import */ var _modules_blogCardStyle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/blogCardStyle.js */ "./src/assets/js/modules/blogCardStyle.js");
+/* harmony import */ var _modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/coursesCardStyle.js */ "./src/assets/js/modules/coursesCardStyle.js");
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  Object(_modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  Object(_modules_blogCardStyle__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  const swiper = new Swiper('.articles-wrapper.swiper', {
+  // script to hide the header when scrolling down and show it when scrolling up
+  Object(_modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); // content overflow control and card animation (blog cards)
+
+  Object(_modules_blogCardStyle_js__WEBPACK_IMPORTED_MODULE_1__["default"])(); // content overflow control (courses items)
+
+  Object(_modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__["default"])(); // slider for Articles section
+
+  const swiperArticles = new Swiper('.articles-wrapper.swiper', {
     slidesPerView: 4,
     spaceBetween: 30,
     draggable: false,
@@ -113,8 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
       dynamicBullets: true
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      nextEl: ".articles-button-next.swiper-button-next",
+      prevEl: ".articles-button-prev.swiper-button-prev"
+    }
+  }); // slider for Courses section
+
+  const swiperCourses = new Swiper('.courses-wrapper.swiper', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    draggable: false,
+    allowTouchMove: false,
+    pagination: {
+      el: ".courses-pagination.swiper-pagination",
+      clickable: true,
+      dynamicBullets: true
+    },
+    navigation: {
+      nextEl: ".courses-button-next.swiper-button-next",
+      prevEl: ".courses-button-prev.swiper-button-prev"
     }
   });
 });
@@ -145,6 +168,26 @@ function blogCardStyle() {
     title.addEventListener('mouseout', () => {
       img.classList.remove('hover');
     });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/coursesCardStyle.js":
+/*!***************************************************!*\
+  !*** ./src/assets/js/modules/coursesCardStyle.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return coursesCardStyle; });
+function coursesCardStyle() {
+  const cards = document.querySelectorAll('.courses-item');
+  cards.forEach(card => {
+    const description = card.querySelector('.courses-item__descr');
+    description.innerText.length > 215 ? description.innerText = description.innerText.slice(0, 215) + '...' : description.innerText;
   });
 }
 

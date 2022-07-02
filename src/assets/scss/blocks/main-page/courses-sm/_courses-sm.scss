@@ -1,0 +1,133 @@
+.courses {
+  position: relative;
+  padding: 80px 0;
+  &::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-1.svg');
+    position: absolute;
+    top: -120px;
+    left: -145px;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    width: 530px;
+    height: 500px;
+    background: url('../img/background/img-3.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 145px;
+    right: 75px;
+    z-index: -1;
+  }
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  &-slider {
+    padding-bottom: 80px;
+  }
+  &-item {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    min-height: 272px;
+    background: #E7EEF3;
+    border-radius: 8px;
+    padding: 30px 25px 25px 25px;
+    display: grid;
+    grid-template-rows: max-content;
+    &::after {
+      content: 'New';
+      font-family: $source-serif-pro-font;
+      font-weight: $font-black;
+      font-size: 100px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: transparent;
+      opacity: 0.3;
+      -webkit-text-stroke: 1px $white-color;
+      position: absolute;
+      top: 15px;
+      right: 30px;
+    }
+    &__logo {
+      margin-bottom: 25px;
+    }
+    &__info {
+      margin-bottom: 10px;
+    }
+    &__title {
+      font-family: $segoeUI-font;
+      font-weight: $font-bold;
+      font-size: $fz-4;
+      line-height: 1;
+      color: $black-color;
+      margin-bottom: 20px;
+    }
+    &__descr {
+      font-family: $segoeUI-font;
+      font-weight: $font-regular;
+      font-size: $fz-7;
+      line-height: 143%;
+      color: $black-color;
+    }
+    &__more {
+      align-self: flex-end;
+      justify-self: end;
+      font-family: $bitter-font;
+      font-weight: $font-semibold;
+      font-size: $fz-6;
+      line-height: 120%;
+      text-decoration-line: none;
+      color: $black-color;
+      border-bottom: 1px solid $black-color;
+      &:hover {
+        font-weight: $font-bold;
+      }
+    }
+
+    &.new {
+      .courses-item__descr {
+        font-size: 20px;
+      }
+    }
+    &.c-sharp {
+      background: #CCC1F6;
+      &::after {
+        content: 'HERO';
+      }
+    }
+    &.javascript {
+      background: #FFF7B9;
+      &::after {
+        content: 'HERO';
+        opacity: 0.7;
+      }
+    }
+    &.c-plus-plus {
+      background: #FFB6B6;
+      &::after {
+        content: 'HERO';
+      }
+    }
+    &.new {
+      &::after {
+        content: 'NEW';
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.courses-button-prev.swiper-button-prev {
+  left: 25px;
+}
+.courses-button-next.swiper-button-next {
+  right: 25px;
+}

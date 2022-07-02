@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@900&display=swap");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -87,6 +88,7 @@ input, select {
 /*========== Z-index ==========*/
 /*========== Other ==========*/
 /* font-family: 'Bitter', serif; */
+/* font-family: 'Source Serif Pro', serif; */
 /* font-family: 'Consolas', monospace; */
 @font-face {
   font-family: 'Consolas';
@@ -235,7 +237,7 @@ input {
     border-color: #C4CACF; }
 
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: 20px; }
+  bottom: 10px; }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   color: #E36F59;
@@ -630,7 +632,7 @@ input {
       object-fit: cover; }
 
 .articles {
-  padding: 80px 0;
+  padding: 80px 0 70px;
   position: relative; }
   .articles::before {
     content: '';
@@ -638,8 +640,8 @@ input {
     height: 695px;
     background: url("../img/background/img-2.svg");
     position: absolute;
-    top: 30px;
-    right: -100px;
+    top: 40px;
+    right: -152px;
     z-index: -1; }
   .articles-container {
     max-width: 1290px; }
@@ -651,4 +653,111 @@ input {
   .articles-wrapper {
     padding: 0 15px; }
   .articles-slider {
-    padding-bottom: 70px; }
+    padding-bottom: 80px; }
+
+.courses {
+  position: relative;
+  padding: 80px 0; }
+  .courses::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url("../img/background/img-1.svg");
+    position: absolute;
+    top: -120px;
+    left: -145px;
+    z-index: -1; }
+  .courses::after {
+    content: '';
+    width: 530px;
+    height: 500px;
+    background: url("../img/background/img-3.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 145px;
+    right: 75px;
+    z-index: -1; }
+  .courses-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px; }
+  .courses-slider {
+    padding-bottom: 80px; }
+  .courses-item {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    min-height: 272px;
+    background: #E7EEF3;
+    border-radius: 8px;
+    padding: 30px 25px 25px 25px;
+    display: grid;
+    grid-template-rows: max-content; }
+    .courses-item::after {
+      content: 'New';
+      font-family: "Source Serif Pro", serif;
+      font-weight: 900;
+      font-size: 100px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: transparent;
+      opacity: 0.3;
+      -webkit-text-stroke: 1px #FFFFFF;
+      position: absolute;
+      top: 15px;
+      right: 30px; }
+    .courses-item__logo {
+      margin-bottom: 25px; }
+    .courses-item__info {
+      margin-bottom: 10px; }
+    .courses-item__title {
+      font-family: "SegoeUI", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1;
+      color: #23262D;
+      margin-bottom: 20px; }
+    .courses-item__descr {
+      font-family: "SegoeUI", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #23262D; }
+    .courses-item__more {
+      align-self: flex-end;
+      justify-self: end;
+      font-family: "Bitter", serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 120%;
+      text-decoration-line: none;
+      color: #23262D;
+      border-bottom: 1px solid #23262D; }
+      .courses-item__more:hover {
+        font-weight: 700; }
+    .courses-item.new .courses-item__descr {
+      font-size: 20px; }
+    .courses-item.c-sharp {
+      background: #CCC1F6; }
+      .courses-item.c-sharp::after {
+        content: 'HERO'; }
+    .courses-item.javascript {
+      background: #FFF7B9; }
+      .courses-item.javascript::after {
+        content: 'HERO';
+        opacity: 0.7; }
+    .courses-item.c-plus-plus {
+      background: #FFB6B6; }
+      .courses-item.c-plus-plus::after {
+        content: 'HERO'; }
+    .courses-item.new::after {
+      content: 'NEW';
+      opacity: 0.7; }
+
+.courses-button-prev.swiper-button-prev {
+  left: 25px; }
+
+.courses-button-next.swiper-button-next {
+  right: 25px; }
