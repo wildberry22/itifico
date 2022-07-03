@@ -12,8 +12,11 @@
     align-items: center;
     justify-content: space-between;
   }
+  &.scroll {
+    box-shadow: 12px 9px 50px 0 rgba(0, 0, 0, .05);
+  }
   &.hide {
-    transform: translateY(-80px);
+    transform: translateY(-90px);
   }
   .logo {
     img {
@@ -75,4 +78,5 @@
       align-items:center;
     }
   }
+  
 }

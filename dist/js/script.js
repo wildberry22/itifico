@@ -98,6 +98,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/stickyHeader.js */ "./src/assets/js/modules/stickyHeader.js");
 /* harmony import */ var _modules_blogCardStyle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/blogCardStyle.js */ "./src/assets/js/modules/blogCardStyle.js");
 /* harmony import */ var _modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/coursesCardStyle.js */ "./src/assets/js/modules/coursesCardStyle.js");
+/* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/formValidation.js */ "./src/assets/js/modules/formValidation.js");
+/* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
+
+
 
 
 
@@ -139,7 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".courses-button-next.swiper-button-next",
       prevEl: ".courses-button-prev.swiper-button-prev"
     }
-  });
+  }); // form validation
+
+  Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sending form data on server
+
+  Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),
@@ -193,6 +201,159 @@ function coursesCardStyle() {
 
 /***/ }),
 
+/***/ "./src/assets/js/modules/formValidation.js":
+/*!*************************************************!*\
+  !*** ./src/assets/js/modules/formValidation.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return formValidation; });
+function formValidation() {
+  document.querySelectorAll('form').forEach(form => {
+    const nameError = form.querySelector('#name-error');
+    const emailError = form.querySelector('#email-error');
+    const nameInput = form.querySelector('#name-input');
+    const emailInput = form.querySelector('#email-input');
+    nameInput.addEventListener('keyup', () => validateName(nameInput, nameError));
+    emailInput.addEventListener('keyup', () => validateEmail(emailInput, emailError));
+    form.addEventListener('submit', e => validateForm(e, validateName(nameInput, nameError), validateEmail(emailInput, emailError)));
+  });
+
+  function validateName(nameInput, nameError) {
+    const name = nameInput.value;
+
+    if (name.length == 0) {
+      nameError.innerText = 'Name is required!';
+      nameInput.classList.add('invalid');
+      nameInput.classList.remove('valid');
+      return false;
+    }
+
+    if (!name.match(/^[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]*\s{1}[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]*$/)) {
+      nameError.innerText = 'Enter full name!';
+      nameInput.classList.add('invalid');
+      nameInput.classList.remove('valid');
+      return false;
+    }
+
+    nameError.innerText = '';
+    nameInput.classList.add('valid');
+    nameInput.classList.remove('invalid');
+    return true;
+  }
+
+  function validateEmail(emailInput, emailError) {
+    const email = emailInput.value;
+
+    if (email.length == 0) {
+      emailError.innerText = 'Email is required!';
+      emailInput.classList.add('invalid');
+      emailInput.classList.remove('valid');
+      return false;
+    }
+
+    if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z\.]{2,}$/)) {
+      emailError.innerText = 'Email invalid!';
+      emailInput.classList.add('invalid');
+      emailInput.classList.remove('valid');
+      return false;
+    }
+
+    emailError.innerText = '';
+    emailInput.classList.add('valid');
+    emailInput.classList.remove('invalid');
+    return true;
+  }
+
+  function validateForm(event, input1, input2) {
+    event.preventDefault();
+
+    if (!input1 || !input2) {
+      return false;
+    }
+
+    document.querySelectorAll('input').forEach(input => input.classList.remove('valid'));
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/forms.js":
+/*!****************************************!*\
+  !*** ./src/assets/js/modules/forms.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return forms; });
+function forms() {
+  const form = document.querySelectorAll('form');
+  const input = document.querySelectorAll('input');
+  let valid = true;
+  const message = {
+    loading: 'Завантаження...',
+    success: 'Дякуємо за підписку на розсилку!',
+    failure: 'Щось пішло не так...'
+  };
+
+  const postData = async (url, data) => {
+    document.querySelector('.status').textContent = message.loading;
+    let res = await fetch(url, {
+      method: 'POST',
+      body: data
+    });
+    return await res.text();
+  };
+
+  const clearInputs = () => {
+    input.forEach(item => {
+      item.value = '';
+    });
+  };
+
+  form.forEach(item => {
+    item.addEventListener('submit', e => {
+      e.preventDefault(); // validation check
+
+      valid = true;
+      item.querySelectorAll('input').forEach(element => {
+        if (element.classList.contains('invalid')) {
+          valid = false;
+        }
+      });
+
+      if (valid) {
+        let statusMessage = document.createElement('div');
+        statusMessage.classList.add('status');
+        item.appendChild(statusMessage);
+        const formData = new FormData(item);
+        postData('./server.php', formData).then(res => {
+          console.log(res);
+          statusMessage.textContent = message.success;
+          statusMessage.classList.add('ok');
+        }).catch(() => {
+          statusMessage.textContent = message.failure;
+          statusMessage.classList.add('error');
+        }).finally(() => {
+          clearInputs();
+          setTimeout(() => {
+            statusMessage.classList.remove('ok');
+            statusMessage.classList.remove('error');
+            statusMessage.remove();
+          }, 3000);
+        });
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/assets/js/modules/stickyHeader.js":
 /*!***********************************************!*\
   !*** ./src/assets/js/modules/stickyHeader.js ***!
@@ -213,6 +374,12 @@ function stickyHeader() {
   const containHide = () => header.classList.contains('hide');
 
   window.addEventListener('scroll', () => {
+    if (scrollPosition() > 0) {
+      header.classList.add('scroll');
+    } else {
+      header.classList.remove('scroll');
+    }
+
     if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
       header.classList.add('hide');
     } else if (scrollPosition() < lastScroll && containHide()) {

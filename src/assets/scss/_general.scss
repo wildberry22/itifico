@@ -7,6 +7,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   padding-top: 10px;
@@ -110,12 +111,15 @@ body {
 
 
 /*========== Inputs ==========*/
-input {
+.input-wrapper {
+  position: relative;
+}
+.input {
   position: relative;
   background: $white-color;
   border: 2px solid $border-color;
   border-radius: 8px;
-  padding: 21px 80px 23px 25px;
+  padding: 18px 82px 20px 25px;
   font-family: $segoeUI-font;
   font-weight: $font-regular;
   font-size: $fz-6;
@@ -123,14 +127,140 @@ input {
   color: $black-color;
   outline-color: $gray2-color;
   transition: .2s ease;
+
+  &.valid {
+    &:hover,
+    &:focus {
+      color: $green-color;
+      border-color: $green-color;
+      &~.input-icon {
+        border-left: 2px solid $green-color;
+        .input-icon__img {
+          path {
+            fill: $green-color;
+          }
+        }
+      }
+    }
+    color: $green-color;
+    border-color: $green-color;
+    &~.input-icon {
+      border-left: 2px solid $green-color;
+      .input-icon__img {
+        path {
+          fill: $green-color;
+        }
+      }
+    }
+  }
+  &.invalid {
+    &:hover,
+    &:focus {
+      color: $red-color;
+      border-color: $red-color;
+      &~.input-icon {
+        border-left: 2px solid $red-color;
+        .input-icon__img {
+          path {
+            fill: $red-color;
+          }
+        }
+      }
+    }
+    color: $red-color;
+    border-color: $red-color;
+    &~.input-icon {
+      border-left: 2px solid $red-color;
+      .input-icon__img {
+        path {
+          fill: $red-color;
+        }
+      }
+    }
+  }
+
   &::placeholder {
     color: $txt-color;
   }
   &:hover {
     border-color: $gray2-color;
+    &~.input-icon {
+      border-left: 2px solid $gray2-color;
+      .input-icon__img {
+        path {
+          fill: $gray2-color;
+        }
+      }
+    }
   }
   &:focus {
     outline: none;
     border-color: $gray2-color;
+    &~.input-icon {
+      border-left: 2px solid $gray2-color;
+      .input-icon__img {
+        path {
+          fill: $gray2-color;
+        }
+      }
+    }
+  }
+  &-icon {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: transparent;
+    border-left: 2px solid $border-color;
+    border-right: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease;
+    &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      path {
+        transition: .2s ease;
+      }
+    }
   }
 }
+.error-msg {
+  font-size: $fz-7;
+  line-height: 1;
+  color: $red-color;
+  position: absolute;
+  bottom: -18px;
+  left: 2px;
+}
+
+
+/*========== Form message ==========*/
+.status {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: $white-color;
+  box-shadow: 0px 14px 34px rgba(21, 33, 56, 0.11);
+  border-radius: 20px;
+  padding: 60px 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  font-family: $bitter-font;
+  font-size: $fz-3;
+  color: $black-color;
+  &.ok {
+    color: $green-color;
+  }
+  &.error {
+    color: $red-color;
+  }
+} 

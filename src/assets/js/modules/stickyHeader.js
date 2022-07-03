@@ -8,6 +8,11 @@ export default function stickyHeader() {
   const containHide = () => header.classList.contains('hide');
   
   window.addEventListener('scroll', () => {
+    if (scrollPosition() > 0) {
+      header.classList.add('scroll');
+    } else {
+      header.classList.remove('scroll');
+    }
 
     if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
       header.classList.add('hide');

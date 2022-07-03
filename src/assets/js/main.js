@@ -1,6 +1,9 @@
 import stickyHeader from './modules/stickyHeader.js';
 import blogCardStyle from './modules/blogCardStyle.js';
 import coursesCardStyle from './modules/coursesCardStyle.js';
+import formValidation from './modules/formValidation.js';
+import forms from './modules/forms.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // script to hide the header when scrolling down and show it when scrolling up
@@ -41,4 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".courses-button-prev.swiper-button-prev",
     },
   });
+  // form validation
+  formValidation();
+  // sending form data on server
+  forms();
 });
