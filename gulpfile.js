@@ -9,7 +9,7 @@ const browsersync = require("browser-sync");
 const dist = "./dist";
 
 gulp.task("copy-html", () => {
-    return gulp.src("./src/index.html")
+    return gulp.src("./src/*.html")
                 .pipe(gulp.dest(dist))
                 .pipe(browsersync.stream());
 });
@@ -67,7 +67,7 @@ gulp.task("watch", () => {
 		notify: true
     });
 
-    gulp.watch("./src/index.html", gulp.parallel("copy-html"));
+    gulp.watch("./src/*.html", gulp.parallel("copy-html"));
     gulp.watch("./src/assets/img/**/*.*", gulp.parallel("copy-assets"));
     gulp.watch("./src/assets/scss/**/*.scss", gulp.parallel("build-sass"));
     gulp.watch("./src/assets/js/**/*.js", gulp.parallel("build-js"));
@@ -76,7 +76,7 @@ gulp.task("watch", () => {
 gulp.task("build", gulp.parallel("copy-html", "copy-assets", "build-sass", "build-js"));
 
 gulp.task("prod", () => {
-    gulp.src("./src/index.html")
+    gulp.src("./src/*.html")
         .pipe(gulp.dest(dist));
     gulp.src("./src/assets/img/**/*.*")
         .pipe(gulp.dest(dist + "/img"));

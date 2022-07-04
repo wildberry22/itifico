@@ -158,6 +158,9 @@ body {
   padding: 0 15px;
   margin: 0 auto; }
 
+.first-section {
+  margin-top: 80px; }
+
 /*========== Selection ==========*/
 ::-moz-selection {
   color: #FFFFFF;
@@ -180,6 +183,7 @@ body {
   color: #FFFFFF;
   transition: .2s ease;
   display: inline-block;
+  text-decoration: none;
   cursor: pointer; }
   .btn:hover {
     box-shadow: 0px 14px 14px rgba(190, 39, 39, 0.14); }
@@ -339,6 +343,13 @@ body {
   .status.error {
     color: #E36F59; }
 
+/*========== Select ==========*/
+select {
+  padding: 22px 25px;
+  background: #FFFFFF;
+  border: 2px solid #E2E7EB;
+  border-radius: 8px; }
+
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
   bottom: 10px; }
 
@@ -430,7 +441,8 @@ body {
     align-items: center;
     justify-content: space-between; }
   .header.scroll {
-    box-shadow: 12px 9px 50px 0 rgba(0, 0, 0, 0.05); }
+    box-shadow: 12px 9px 50px 0 rgba(0, 0, 0, 0.05);
+    padding: 8px 0; }
   .header.hide {
     transform: translateY(-90px); }
   .header .logo img {
@@ -511,6 +523,43 @@ body {
       letter-spacing: 0.03em; }
       .footer-social__link:hover {
         color: #E36F59; }
+
+.breadcrumbs {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 30px; }
+  .breadcrumbs::before {
+    content: url("data:image/svg+xml;charset=UTF-8,<svg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_84_22271)'><path d='M12.7817 5.81146L6.949 0.496757C6.69298 0.263442 6.30692 0.263468 6.05101 0.496731L0.218309 5.81149C0.0132296 5.99836 -0.0545125 6.28629 0.0456788 6.54499C0.145895 6.8037 0.389899 6.97085 0.667342 6.97085H1.59892V12.2958C1.59892 12.5069 1.77011 12.6781 1.98123 12.6781H5.17826C5.38938 12.6781 5.56056 12.5069 5.56056 12.2958V9.06265H7.43952V12.2958C7.43952 12.5069 7.6107 12.6781 7.82182 12.6781H11.0187C11.2298 12.6781 11.401 12.507 11.401 12.2958V6.97085H12.3328C12.6102 6.97085 12.8542 6.80367 12.9544 6.54499C13.0545 6.28626 12.9867 5.99836 12.7817 5.81146Z' fill='%23E36F59'/><path d='M11.3018 1.08496H8.73438L11.6841 3.76712V1.46724C11.6841 1.25612 11.513 1.08496 11.3018 1.08496Z' fill='%23E36F59'/></g><defs><clipPath id='clip0_84_22271'><rect width='13' height='13' fill='white'/></clipPath></defs></svg>");
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+    list-style-type: none; }
+    .breadcrumbs-list__item {
+      position: relative;
+      color: #606268;
+      opacity: 0.6; }
+      .breadcrumbs-list__item::before {
+        content: url("data:image/svg+xml;charset=UTF-8,<svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M9.84016 5.38856L6.22881 8.99999C6.12572 9.10308 5.98832 9.15967 5.84182 9.15967C5.69516 9.15967 5.55784 9.103 5.45475 8.99999L5.12687 8.67203C5.02386 8.5691 4.96711 8.43163 4.96711 8.28504C4.96711 8.13854 5.02386 7.99643 5.12687 7.8935L7.23368 5.78205H0.540239C0.238453 5.78205 0 5.54579 0 5.24393V4.78027C0 4.47841 0.238453 4.21833 0.540239 4.21833H7.25758L5.12695 2.09509C5.02394 1.992 4.96719 1.85826 4.96719 1.71168C4.96719 1.56526 5.02394 1.42957 5.12695 1.32656L5.45483 0.999653C5.55792 0.896564 5.69524 0.840386 5.8419 0.840386C5.9884 0.840386 6.1258 0.897296 6.22889 1.00038L9.84024 4.61174C9.94357 4.71515 10.0004 4.8532 10 4.99995C10.0003 5.14718 9.94357 5.28531 9.84016 5.38856Z' fill='%23212836'/></svg>");
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px; }
+      .breadcrumbs-list__item:nth-child(1)::before {
+        display: none; }
+      .breadcrumbs-list__item.active {
+        opacity: 1; }
+    .breadcrumbs-list__link {
+      font-family: "SegoeUI", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      text-decoration: none;
+      color: inherit; }
 
 .blog-card {
   max-width: 285px;
@@ -634,7 +683,6 @@ body {
 
 .hero {
   position: relative;
-  margin-top: 80px;
   padding: 40px 0 80px; }
   .hero::before {
     content: '';
@@ -1008,3 +1056,20 @@ body {
       transform-origin: top center; }
     .mailing__btn:hover::after {
       animation: bell .5s ease; }
+
+.blog {
+  padding: 10px 0 160px; }
+  .blog__title {
+    margin-bottom: 20px; }
+  .blog-category {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px; }
+    .blog-category__list {
+      display: flex;
+      justify-content: start;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap; }
