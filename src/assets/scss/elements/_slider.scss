@@ -49,7 +49,7 @@
   path, line {
     transition: .1s linear;
   }
-  &:before {
+  &::before {
     content: '';
     border: 2px solid transparent;
     position: absolute;
@@ -71,7 +71,7 @@
     line {
       stroke: $red-color;
     }
-    &:before {
+    &::before {
       border: 2px solid $red-color;
     }
   }

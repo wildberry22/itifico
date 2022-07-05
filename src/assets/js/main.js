@@ -3,6 +3,7 @@ import blogCardStyle from './modules/blogCardStyle.js';
 import coursesCardStyle from './modules/coursesCardStyle.js';
 import formValidation from './modules/formValidation.js';
 import forms from './modules/forms.js';
+import select from './modules/select.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,4 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
   formValidation();
   // sending form data on server
   forms();
+
+  select(document.querySelector('.blog-category__sort'));
 });

@@ -3,12 +3,18 @@
 @import 'fonts';
 @import 'animations';
 @import 'general';
-@import 'slider';
+
+
+@import 'elements/slider';
+@import 'elements/buttons';
+@import 'elements/inputs';
+@import 'elements/selects';
+@import 'elements/breadcrumbs';
+@import 'elements/pagination';
 
 
 @import 'blocks/header/header';
 @import 'blocks/footer/footer';
-@import 'blocks/breadcrumbs/breadcrumbs';
 @import 'blocks/blog-elements/blog-elements';
 @import 'blocks/main-page/main-page';
 @import 'blocks/blog-catalog-page/blog-catalog-page';

@@ -1,0 +1,105 @@
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 2px solid $border-color;
+      border-radius: 8px;
+      background: $white-color;
+      transition: .2s;
+      cursor: pointer;
+      a {
+        font-family: $segoeUI-font;
+        font-weight: $font-bold;
+        font-size: $fz-5;
+        line-height: 1;
+        text-align: center;
+        color: $black-color;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        transition: .2s;
+      }
+      &:hover {
+        border-color: $red-color;
+        a {
+          color: $red-color;
+        }
+      }
+      &.gap {
+        width: 30px;
+        cursor: initial;
+        pointer-events: none;
+        border: none;
+      }
+      &.active {
+        border-color: $red-color;
+        background-color: $red-color;
+        pointer-events: none;
+        a {
+          color: $white-color;
+        }
+      }
+    }
+  }
+  &-arrow {
+    top: 2px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    path, line {
+      transition: .1s linear;
+    }
+    &::before {
+      content: '';
+      border: 2px solid transparent;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      width: 55px;
+      height: 55px;
+      background: transparent;
+      border-radius: 50%;
+      transition: .2s linear;
+    }
+    &-next {
+      right: 25px;
+      &:before {
+        left: 10px;
+      }
+    }
+    &-prev {
+      left: 25px;
+      &:before {
+        right: 10px;
+      }
+    }
+    &:hover {
+      path {
+        fill: $red-color;
+      }
+      line {
+        stroke: $red-color;
+      }
+      &::before {
+        border: 2px solid $red-color;
+      }
+    }
+  }
+}

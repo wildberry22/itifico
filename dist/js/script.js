@@ -100,6 +100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/coursesCardStyle.js */ "./src/assets/js/modules/coursesCardStyle.js");
 /* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/formValidation.js */ "./src/assets/js/modules/formValidation.js");
 /* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
+/* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
+
 
 
 
@@ -148,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sending form data on server
 
   Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules_select_js__WEBPACK_IMPORTED_MODULE_5__["default"])(document.querySelector('.blog-category__sort'));
 });
 
 /***/ }),
@@ -350,6 +353,37 @@ function forms() {
       }
     });
   });
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/select.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/modules/select.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return select; });
+function select(containerElem) {
+  if (containerElem) {
+    const selected = containerElem.querySelector('.selected');
+    const optionsContainer = containerElem.querySelector('.options-container');
+    const optionsList = containerElem.querySelectorAll('.option');
+    selected.addEventListener('click', () => {
+      optionsContainer.classList.toggle('active');
+    });
+    optionsList.forEach(o => {
+      o.addEventListener('click', () => {
+        optionsList.forEach(el => el.classList.remove('active'));
+        selected.innerHTML = o.querySelector('label').innerHTML;
+        o.classList.add('active');
+        optionsContainer.classList.remove('active');
+      });
+    });
+  }
 }
 
 /***/ }),
