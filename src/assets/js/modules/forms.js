@@ -4,9 +4,10 @@ export default function forms () {
   let valid = true;
 
   const message = {
-    loading: 'Завантаження...',
-    success: 'Дякуємо за підписку на розсилку!',
-    failure: 'Щось пішло не так...'
+    loading: "Завантаження...",
+    successMailing: "Дякуємо за підписку на розсилку!",
+    successMsg: "Дякуємо за вашу заявку. Ми зв'яжемося з вами найближчим часом!",
+    failure: "Щось пішло не так..."
   };
 
   const postData = async (url, data) => {
@@ -49,7 +50,11 @@ export default function forms () {
         postData('./server.php', formData)
           .then(res => {
             console.log(res);
-            statusMessage.textContent = message.success;
+            if (item.hasAttribute('data-contact')) {
+              statusMessage.textContent = message.successMsg;        
+            } else if (item.hasAttribute('data-mailing')) {
+              statusMessage.textContent = message.successMailing;
+            }
             statusMessage.classList.add('ok');
           })
           .catch(() => {

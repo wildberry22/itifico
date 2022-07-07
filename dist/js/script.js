@@ -305,9 +305,10 @@ function forms() {
   const input = document.querySelectorAll('input');
   let valid = true;
   const message = {
-    loading: 'Завантаження...',
-    success: 'Дякуємо за підписку на розсилку!',
-    failure: 'Щось пішло не так...'
+    loading: "Завантаження...",
+    successMailing: "Дякуємо за підписку на розсилку!",
+    successMsg: "Дякуємо за вашу заявку. Ми зв'яжемося з вами найближчим часом!",
+    failure: "Щось пішло не так..."
   };
 
   const postData = async (url, data) => {
@@ -343,7 +344,13 @@ function forms() {
         const formData = new FormData(item);
         postData('./server.php', formData).then(res => {
           console.log(res);
-          statusMessage.textContent = message.success;
+
+          if (item.hasAttribute('data-contact')) {
+            statusMessage.textContent = message.successMsg;
+          } else if (item.hasAttribute('data-mailing')) {
+            statusMessage.textContent = message.successMailing;
+          }
+
           statusMessage.classList.add('ok');
         }).catch(() => {
           statusMessage.textContent = message.failure;
