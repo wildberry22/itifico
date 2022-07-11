@@ -16,13 +16,13 @@ export default function formValidation() {
     const name = nameInput.value;
 
     if (name.length == 0) {
-      nameError.innerText = 'Name is required!';
+      nameError.innerText = "Введіть ваше ім'я!";
       nameInput.classList.add('invalid');
       nameInput.classList.remove('valid');
       return false;
     }
     if (!name.match(/^[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]*\s{1}[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]*$/)) {
-      nameError.innerText = 'Enter full name!';
+      nameError.innerText = "Введіть повне ім'я!";
       nameInput.classList.add('invalid');
       nameInput.classList.remove('valid');
       return false;
@@ -37,13 +37,13 @@ export default function formValidation() {
     const email = emailInput.value;
 
     if (email.length == 0) {
-      emailError.innerText = 'Email is required!';
+      emailError.innerText = 'Введіть вашу електронну адресу';
       emailInput.classList.add('invalid');
       emailInput.classList.remove('valid');
       return false;
     }
     if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z\.]{2,}$/)) {
-      emailError.innerText = 'Email invalid!';
+      emailError.innerText = 'Електронна адреса неправильна!';
       emailInput.classList.add('invalid');
       emailInput.classList.remove('valid');
       return false;

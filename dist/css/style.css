@@ -1447,3 +1447,92 @@ body {
         width: 100%; }
     .about-contact__btn {
       padding: 22px 65px; }
+
+.courses-catalog {
+  position: relative;
+  padding: 10px 0 160px; }
+  .courses-catalog::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url("../img/background/img-1.svg");
+    position: absolute;
+    top: 0;
+    left: -100px;
+    z-index: -1; }
+  .courses-catalog::after {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url("../img/background/img-2.svg");
+    position: absolute;
+    bottom: -20px;
+    right: -152px;
+    z-index: -1; }
+  .courses-catalog .courses-wrapper {
+    position: relative; }
+    .courses-catalog .courses-wrapper::before {
+      content: 'courses';
+      position: absolute;
+      top: 246px;
+      left: -390px;
+      transform: rotate(-90deg);
+      font-family: "Source Serif Pro", serif;
+      font-weight: 900;
+      font-size: 130px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px #23262D; }
+  .courses-catalog .courses__title {
+    margin-bottom: 40px; }
+  .courses-catalog .courses-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; }
+    .courses-catalog .courses-list__item {
+      background: #eee;
+      border-radius: 8px;
+      padding: 30px 20px;
+      min-height: 360px; }
+      .courses-catalog .courses-list__item.c-plus-plus {
+        background: #FFB6B6; }
+      .courses-catalog .courses-list__item.javascript {
+        background: #FFF7B9; }
+      .courses-catalog .courses-list__item.c-sharp {
+        background: #CCC1F6; }
+      .courses-catalog .courses-list__item-logo {
+        margin-bottom: 25px; }
+      .courses-catalog .courses-list__item-info {
+        display: grid;
+        grid-template-rows: max-content;
+        height: 220px; }
+      .courses-catalog .courses-list__item-title {
+        font-family: "SegoeUI", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1;
+        color: #23262D;
+        margin-bottom: 20px; }
+      .courses-catalog .courses-list__item-descr {
+        font-family: "SegoeUI", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: #23262D;
+        margin-bottom: 10px; }
+      .courses-catalog .courses-list__item-more {
+        align-self: flex-end;
+        justify-self: end;
+        font-family: "Bitter", serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        text-decoration-line: none;
+        color: #23262D;
+        border-bottom: 1px solid #23262D; }
+        .courses-catalog .courses-list__item-more:hover {
+          font-weight: 700; }
