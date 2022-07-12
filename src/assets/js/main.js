@@ -50,6 +50,25 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   } catch(e) {}
+
+  // slider for Articles section
+  try {
+    const swiperArticles = new Swiper('.article-more__slider.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      draggable: false,
+      allowTouchMove: false,
+      pagination: {
+        el: ".articles-pagination.swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".articles-button-next.swiper-button-next",
+        prevEl: ".articles-button-prev.swiper-button-prev",
+      },
+    });
+  } catch(e) {}
   
   // form validation
   formValidation();

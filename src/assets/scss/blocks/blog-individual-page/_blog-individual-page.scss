@@ -1,0 +1,14 @@
+.blog-individual {
+  padding: 10px 0 160px;
+  position: relative;
+
+  .content-inner {
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+@import 'article/article';

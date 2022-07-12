@@ -150,6 +150,25 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: ".courses-button-prev.swiper-button-prev"
       }
     });
+  } catch (e) {} // slider for Articles section
+
+
+  try {
+    const swiperArticles = new Swiper('.article-more__slider.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      draggable: false,
+      allowTouchMove: false,
+      pagination: {
+        el: ".articles-pagination.swiper-pagination",
+        clickable: true,
+        dynamicBullets: true
+      },
+      navigation: {
+        nextEl: ".articles-button-next.swiper-button-next",
+        prevEl: ".articles-button-prev.swiper-button-prev"
+      }
+    });
   } catch (e) {} // form validation
 
 
@@ -209,7 +228,9 @@ function coursesCardStyle() {
   });
   cardsCatalog.forEach(card => {
     const description = card.querySelector('.courses-list__item-descr');
+    const title = card.querySelector('.courses-list__item-title');
     description.innerText.length > 175 ? description.innerText = description.innerText.slice(0, 175) + '...' : description.innerText;
+    title.innerText.length > 35 ? title.innerText = title.innerText.slice(0, 35) + '...' : title.innerText;
   });
 }
 

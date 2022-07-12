@@ -10,7 +10,9 @@ export default function coursesCardStyle() {
 
   cardsCatalog.forEach(card => {
     const description = card.querySelector('.courses-list__item-descr');
+    const title = card.querySelector('.courses-list__item-title');
     
     description.innerText.length > 175 ? description.innerText = description.innerText.slice(0, 175) + '...' : description.innerText;
+    title.innerText.length > 35 ? title.innerText = title.innerText.slice(0, 35) + '...' : title.innerText;
   });
 }
