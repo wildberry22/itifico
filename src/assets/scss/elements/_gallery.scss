@@ -1,0 +1,101 @@
+.preview-box {
+  position: fixed;
+  max-width: 1000px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  background: $white-color;
+  transform: translate(-50%, -50%) scale(0.8);
+  padding: 0 5px 5px 5px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 101;
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all .3s ease;
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 8px 10px;
+    .icon {
+      width: 35px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $red-color;
+      font-size: $fz-4;
+      transition: .3s;
+      cursor: pointer;
+      &:hover {
+        transform: rotate(180deg);
+      }
+     }
+     .title-gallery {
+      font-family: $segoeUI-font;
+      display: flex;
+      font-size: $fz-5;
+      font-weight: $font-regular;
+      color: $black-color;
+      p {
+        margin: 0 5px;
+        &.current-img {
+          font-weight: $font-semibold;
+        }
+      }
+    }
+  }
+  .img-box {
+    display: flex;
+    width: 100%;
+    .slide {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: $white-color;
+      cursor: pointer;
+      width: 60px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      z-index: 111;
+      &.prev {
+        left: 0;
+      }
+      &.next {
+        right: 0;
+      }
+    }
+    img {
+      max-height: 660px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .description {
+    font-family: $segoeUI-font;
+    font-style: italic;
+    font-size: $fz-6;
+    line-height: 120%;
+    color: $txt-color;
+    padding: 8px 10px 10px 10px;
+  }
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.4);
+  display: none;
+  z-index: 100;
+}

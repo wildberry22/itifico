@@ -101,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/formValidation.js */ "./src/assets/js/modules/formValidation.js");
 /* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
 /* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
+/* harmony import */ var _modules_gallery_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gallery.js */ "./src/assets/js/modules/gallery.js");
+
 
 
 
@@ -174,8 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sending form data on server
 
-  Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_modules_select_js__WEBPACK_IMPORTED_MODULE_5__["default"])(document.querySelector('.blog-category__sort'));
+  Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_4__["default"])(); // select styling
+
+  Object(_modules_select_js__WEBPACK_IMPORTED_MODULE_5__["default"])(document.querySelector('.blog-category__sort')); // img gallery
+
+  Object(_modules_gallery_js__WEBPACK_IMPORTED_MODULE_6__["default"])(document.querySelectorAll('[data-gallery]'));
 });
 
 /***/ }),
@@ -205,6 +210,30 @@ function blogCardStyle() {
       img.classList.remove('hover');
     });
   });
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/calcScroll.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/modules/calcScroll.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return calcScroll; });
+function calcScroll() {
+  let div = document.createElement('div');
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.overflowY = 'scroll';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  let scrollWidth = div.offsetWidth - div.clientWidth;
+  div.remove();
+  return scrollWidth;
 }
 
 /***/ }),
@@ -392,6 +421,107 @@ function forms() {
       }
     });
   });
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/gallery.js":
+/*!******************************************!*\
+  !*** ./src/assets/js/modules/gallery.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return gallery; });
+/* harmony import */ var _calcScroll_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calcScroll.js */ "./src/assets/js/modules/calcScroll.js");
+
+function gallery(imgWrapper) {
+  if (imgWrapper) {
+    const previewBox = document.querySelector('.preview-box');
+    const previewImg = previewBox.querySelector('img');
+    const closeIcon = previewBox.querySelector('.icon');
+    const currentImg = previewBox.querySelector('.current-img');
+    const totalImg = previewBox.querySelector('.total-img');
+    const description = previewBox.querySelector('.description');
+    const shadow = document.querySelector('.shadow');
+
+    for (let i = 0; i < imgWrapper.length; i++) {
+      let image = imgWrapper[i].querySelector('img');
+      let descriptionText = imgWrapper[i].querySelector('figcaption').textContent;
+      totalImg.textContent = imgWrapper.length;
+      description.textContent = descriptionText;
+      let newIndex = i;
+      let clickImgIndex;
+
+      image.onclick = () => {
+        clickImgIndex = newIndex;
+
+        function preview() {
+          currentImg.textContent = newIndex + 1;
+          let selectedImgUrl = imgWrapper[newIndex].querySelector('img').src;
+          previewImg.src = selectedImgUrl;
+          description.textContent = imgWrapper[newIndex].querySelector('figcaption').textContent;
+        }
+
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        if (newIndex == 0) {
+          prevBtn.style.display = 'none';
+        }
+
+        if (newIndex >= imgWrapper.length - 1) {
+          nextBtn.style.display = 'none';
+        }
+
+        prevBtn.onclick = () => {
+          newIndex--;
+
+          if (newIndex == 0) {
+            preview();
+            prevBtn.style.display = 'none';
+          } else {
+            preview();
+            nextBtn.style.display = 'block';
+          }
+        };
+
+        nextBtn.onclick = () => {
+          newIndex++;
+
+          if (newIndex == imgWrapper.length - 1) {
+            preview();
+            nextBtn.style.display = 'none';
+          } else {
+            preview();
+            prevBtn.style.display = 'block';
+          }
+        };
+
+        preview();
+        previewBox.classList.add('show');
+        shadow.style.display = 'block';
+        document.querySelector('body').style.overflowY = 'hidden';
+        document.querySelector('html').style.overflowY = 'hidden';
+        document.body.style.marginRight = Object(_calcScroll_js__WEBPACK_IMPORTED_MODULE_0__["default"])() + 'px';
+        document.querySelector('.header').style.paddingRight = Object(_calcScroll_js__WEBPACK_IMPORTED_MODULE_0__["default"])() + 'px';
+
+        closeIcon.onclick = () => {
+          newIndex = clickImgIndex;
+          prevBtn.style.display = 'block';
+          nextBtn.style.display = 'block';
+          previewBox.classList.remove('show');
+          shadow.style.display = 'none';
+          document.querySelector('body').style.overflowY = 'auto';
+          document.querySelector('html').style.overflowY = 'auto';
+          document.body.style.marginRight = '0px';
+          document.querySelector('.header').style.paddingRight = '0px';
+        };
+      };
+    }
+  }
 }
 
 /***/ }),
