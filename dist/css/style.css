@@ -613,6 +613,60 @@ body {
     .pagination-arrow:hover::before {
       border: 2px solid #E36F59; }
 
+.article-arrows {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 160px; }
+
+.article-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none; }
+  .article-arrow__text {
+    font-size: 16px;
+    line-height: 1;
+    color: #23262D;
+    transition: color .2s; }
+  .article-arrow::before {
+    content: '';
+    border: 2px solid transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    background: transparent;
+    border-radius: 50%;
+    transition: .2s linear; }
+  .article-arrow-prev svg, .article-arrow-next svg {
+    position: relative;
+    z-index: 100;
+    width: 40px;
+    height: 20px;
+    transition: .2s linear; }
+    .article-arrow-prev svg path, .article-arrow-prev svg line, .article-arrow-next svg path, .article-arrow-next svg line {
+      transition: .1s linear; }
+  .article-arrow-prev {
+    padding-left: 25px; }
+    .article-arrow-prev::before {
+      left: 0px; }
+  .article-arrow-next {
+    padding-right: 25px; }
+    .article-arrow-next::before {
+      right: 0px; }
+  .article-arrow:hover .article-arrow__text {
+    color: #E36F59; }
+  .article-arrow:hover::before {
+    border: 2px solid #E36F59; }
+  .article-arrow:hover svg path {
+    fill: #E36F59; }
+  .article-arrow:hover svg line {
+    stroke: #E36F59; }
+
 .preview-box {
   position: fixed;
   max-width: 1000px;
@@ -1863,58 +1917,6 @@ body {
       border-color: #E36F59; }
       .article-support:hover path.word {
         fill: #FFFFFF; }
-  .article-arrows {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 160px; }
-  .article-arrow {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none; }
-    .article-arrow__text {
-      font-size: 16px;
-      line-height: 1;
-      color: #23262D;
-      transition: color .2s; }
-    .article-arrow::before {
-      content: '';
-      border: 2px solid transparent;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 55px;
-      height: 55px;
-      background: transparent;
-      border-radius: 50%;
-      transition: .2s linear; }
-    .article-arrow-prev svg, .article-arrow-next svg {
-      position: relative;
-      z-index: 100;
-      width: 40px;
-      height: 20px;
-      transition: .2s linear; }
-      .article-arrow-prev svg path, .article-arrow-prev svg line, .article-arrow-next svg path, .article-arrow-next svg line {
-        transition: .1s linear; }
-    .article-arrow-prev {
-      padding-left: 25px; }
-      .article-arrow-prev::before {
-        left: 0px; }
-    .article-arrow-next {
-      padding-right: 25px; }
-      .article-arrow-next::before {
-        right: 0px; }
-    .article-arrow:hover .article-arrow__text {
-      color: #E36F59; }
-    .article-arrow:hover::before {
-      border: 2px solid #E36F59; }
-    .article-arrow:hover svg path {
-      fill: #E36F59; }
-    .article-arrow:hover svg line {
-      stroke: #E36F59; }
   .article-more {
     position: relative; }
     .article-more::before {
