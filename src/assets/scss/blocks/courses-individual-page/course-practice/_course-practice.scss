@@ -1,0 +1,32 @@
+.course-practice {
+  background: $white-color;
+  box-shadow: 0px 3px 23px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  padding: 0 20px 30px;
+  &__title {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: $bitter-font;
+    font-weight: $font-bold;
+    font-size: 40px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    color: $black-color;
+    padding: 25px 0;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border: 9px solid transparent;
+      border-top: 9px solid $black-color;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transition: .3s;
+    }
+  }
+}

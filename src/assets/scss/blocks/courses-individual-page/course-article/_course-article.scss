@@ -1,0 +1,52 @@
+.course-article {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  &__titles {
+    max-width: 750px;
+  }
+  &__subtitle {
+    font-family: $segoeUI-font;
+    font-weight: $font-bold;
+    font-size: 20px;
+    line-height: 1;
+    color: $txt-color;
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-family: $bitter-font;
+    font-weight: $font-bold;
+    font-size: 40px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    color: $black-color;
+  }
+  &__num {
+    position: relative;
+    font-family: $bitter-font;
+    font-weight: $font-black;
+    font-size: 80px;
+    line-height: 124%;
+    line-height: 1;
+    color: $gray2-color;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -30px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #F3F4F5;
+      z-index: -1;
+    }
+  }
+
+  &__arrows {
+    margin-bottom: 80px;
+  }
+}

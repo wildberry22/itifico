@@ -98,10 +98,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_stickyHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/stickyHeader.js */ "./src/assets/js/modules/stickyHeader.js");
 /* harmony import */ var _modules_blogCardStyle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/blogCardStyle.js */ "./src/assets/js/modules/blogCardStyle.js");
 /* harmony import */ var _modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/coursesCardStyle.js */ "./src/assets/js/modules/coursesCardStyle.js");
-/* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/formValidation.js */ "./src/assets/js/modules/formValidation.js");
-/* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
-/* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
-/* harmony import */ var _modules_gallery_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gallery.js */ "./src/assets/js/modules/gallery.js");
+/* harmony import */ var _modules_courseAsideStyle_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/courseAsideStyle.js */ "./src/assets/js/modules/courseAsideStyle.js");
+/* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/formValidation.js */ "./src/assets/js/modules/formValidation.js");
+/* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
+/* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
+/* harmony import */ var _modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/gallery.js */ "./src/assets/js/modules/gallery.js");
+
 
 
 
@@ -115,7 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Object(_modules_blogCardStyle_js__WEBPACK_IMPORTED_MODULE_1__["default"])(); // content overflow control (courses items)
 
-  Object(_modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__["default"])(); // slider for Articles section
+  Object(_modules_coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_2__["default"])(); // accordion course-aside
+
+  Object(_modules_courseAsideStyle_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); // slider for Articles section
 
   try {
     const swiperArticles = new Swiper('.articles-wrapper.swiper', {
@@ -174,13 +178,18 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (e) {} // form validation
 
 
-  Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); // sending form data on server
+  Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_4__["default"])(); // sending form data on server
 
-  Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_4__["default"])(); // select styling
+  Object(_modules_forms_js__WEBPACK_IMPORTED_MODULE_5__["default"])(); // select styling
 
-  Object(_modules_select_js__WEBPACK_IMPORTED_MODULE_5__["default"])(document.querySelector('.blog-category__sort')); // img gallery
+  try {
+    Object(_modules_select_js__WEBPACK_IMPORTED_MODULE_6__["default"])(document.querySelector('.blog-category__sort'));
+  } catch (e) {} // img gallery
 
-  Object(_modules_gallery_js__WEBPACK_IMPORTED_MODULE_6__["default"])(document.querySelectorAll('[data-gallery]'));
+
+  try {
+    Object(_modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelectorAll('[data-gallery]'));
+  } catch (e) {}
 });
 
 /***/ }),
@@ -234,6 +243,49 @@ function calcScroll() {
   let scrollWidth = div.offsetWidth - div.clientWidth;
   div.remove();
   return scrollWidth;
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/courseAsideStyle.js":
+/*!***************************************************!*\
+  !*** ./src/assets/js/modules/courseAsideStyle.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return coursesAsideStyle; });
+function coursesAsideStyle() {
+  const sections = document.querySelectorAll('.course-nav__list-item');
+  sections.forEach(section => {
+    const title = section.querySelector('.course-nav__list-title');
+    const listItems = section.querySelectorAll('ol > li > a');
+    title.addEventListener('click', () => {
+      sections.forEach(item => {
+        item.classList.remove('visible');
+      });
+      title.parentNode.classList.add('visible');
+    });
+    listItems.forEach(listItem => {
+      listItem.addEventListener('click', () => {
+        sections.forEach(item => {
+          item.classList.remove('visible');
+
+          if (item.classList.contains('active')) {
+            item.classList.remove('active');
+            item.querySelectorAll('ol > li').forEach(li => {
+              li.classList.remove('active');
+            });
+          }
+        });
+        listItem.parentNode.classList.add('active');
+        title.parentNode.classList.add('active');
+        title.parentNode.classList.add('visible');
+      });
+    });
+  });
 }
 
 /***/ }),

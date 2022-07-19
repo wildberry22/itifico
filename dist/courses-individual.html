@@ -81,7 +81,7 @@
           <!-- == content == -->
           <div class="courses-individual__inner">
             <!-- == navigation == -->
-            <aside class="courses-individual__aside">
+            <aside class="courses-individual__aside course-aside">
               <nav class="courses-individual__nav course-nav">
                 <ol class="course-nav__list">
                   <li class="course-nav__list-item">
@@ -110,7 +110,7 @@
                       <li><a href="#">Простіри імен</a></li>
                     </ol>
                   </li>
-                  <li class="course-nav__list-item">
+                  <li class="course-nav__list-item active visible">
                     <h6 class="course-nav__list-title">Класи, структури та об'єкти</h6>
                     <ol>
                       <li><a href="#">Класи та об'єкти</a></li>
@@ -121,7 +121,7 @@
                       <li><a href="#">Структура</a></li>
                       <li><a href="#">Типи значень і довідкові типи</a></li>
                       <li><a href="#">Клас проти структури</a></li>
-                      <li><a href="#">Область застосування (контекст) змінної</a></li>
+                      <li class="active"><a href="#">Область застосування (контекст) змінної</a></li>
                       <li><a href="#">Простіри імен</a></li>
                       <li><a href="#">Глобальні простори імен</a></li>
                       <li><a href="#">Додавання збірки до проекту</a></li>
@@ -346,9 +346,7 @@
                     <h3 class="course-article__subtitle">Класи, структури та об'єкти</h3>
                     <h1 class="course-article__title">Область застосування (контекст) змінної</h1>
                   </div>
-                  <div class="course-article__num">
-                    <span>3.9</span>
-                  </div>
+                  <div class="course-article__num">3.9</div>
                 </div>
 
                 <div class="course-article__img article-img article-img--main">
@@ -432,33 +430,34 @@
 
               <article class="course-practice">
                 <div class="course-practice__title">Практичні завдання</div>
-                <ul class="course-practice__questions">
-                  <li class="course-practice__question">
-                    <div class="course-practice__question-wrapper">
-                      <div class="course-practice__question-num">Питання 1</div>
-                      <div class="course-practice__question-text">
-                        <p>Що виведе наступний код:</p>
-  
-                        <pre><code><span class="code-blue">string</span> name = <span class="code-red">"Tom"</span>;
+                <div class="course-practice__content">
+                  <ul class="course-practice__questions">
+                    <li class="course-practice__question">
+                      <div class="course-practice__question-wrapper">
+                        <div class="course-practice__question-num">Питання 1</div>
+                        <div class="course-practice__question-text">
+                          <p>Що виведе наступний код:</p>
+    
+                          <pre><code><span class="code-blue">string</span> name = <span class="code-red">"Tom"</span>;
 Console.WriteLine(Name);</code></pre>
+                        </div>
                       </div>
-                    </div>
-                    <div class="course-practice__answer">
-                      <div class="course-practice__answer-title">Відповідь</div>
-                      <div class="course-practice__answer-text">
-                        <p>
-                          Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
-                        </p>
+                      <div class="course-practice__answer">
+                        <div class="course-practice__answer-title">Відповідь</div>
+                        <div class="course-practice__answer-text">
+                          <p>
+                            Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li class="course-practice__question">
-                    <div class="course-practice__question-wrapper">
-                      <div class="course-practice__question-num">Питання 2</div>
-                      <div class="course-practice__question-text">
-                        <p>Що виведе на консоль наступний код:</p>
-  
-                        <pre><code><span class="code-red">using</span> Microsoft.AspNetCore.Builder;
+                    </li>
+                    <li class="course-practice__question">
+                      <div class="course-practice__question-wrapper">
+                        <div class="course-practice__question-num">Питання 2</div>
+                        <div class="course-practice__question-text">
+                          <p>Що виведе на консоль наступний код:</p>
+    
+                          <pre><code><span class="code-red">using</span> Microsoft.AspNetCore.Builder;
 <span class="code-red">using</span> Microsoft.AspNetCore.Hosting;
 <span class="code-red">using</span> Microsoft.Extensions.Configuration;
 <span class="code-red">using</span> Microsoft.Extensions.DependencyInjection;
@@ -487,38 +486,40 @@ Console.WriteLine(Name);</code></pre>
         }
     }
 }</code></pre>
+                        </div>
                       </div>
-                    </div>
-                    <div class="course-practice__answer">
-                      <div class="course-practice__answer-title">Відповідь</div>
-                      <div class="course-practice__answer-text">
-                        <p>
-                          Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
-                        </p>
+                      <div class="course-practice__answer">
+                        <div class="course-practice__answer-title">Відповідь</div>
+                        <div class="course-practice__answer-text">
+                          <p>
+                            Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li class="course-practice__question">
-                    <div class="course-practice__question-wrapper">
-                      <div class="course-practice__question-num">Питання 3</div>
-                      <div class="course-practice__question-text">
-                        <p>Який з наступних параметрів представляє правильне визначення змінних:</p>
-  
-                        <pre><code><span class="code-blue">string</span> name = <span class="code-red">"Tom"</span>;
+                    </li>
+                    <li class="course-practice__question">
+                      <div class="course-practice__question-wrapper">
+                        <div class="course-practice__question-num">Питання 3</div>
+                        <div class="course-practice__question-text">
+                          <p>Який з наступних параметрів представляє правильне визначення змінних:</p>
+    
+                          <pre><code><span class="code-blue">string</span> name = <span class="code-red">"Tom"</span>;
 Console.WriteLine(Name);</code></pre>
+                        </div>
                       </div>
-                    </div>
-                    <div class="course-practice__answer">
-                      <div class="course-practice__answer-title">Відповідь</div>
-                      <div class="course-practice__answer-text">
-                        <p>
-                          Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
-                        </p>
+                      <div class="course-practice__answer">
+                        <div class="course-practice__answer-title">Відповідь</div>
+                        <div class="course-practice__answer-text">
+                          <p>
+                            Ця програма не скомпілюється. Метод Console.WriteLine() намагається вивести на консоль значення змінної Name, однак у програмі немає такої змінної. У програмі є лише змінна name. Але оскільки C# реєстрозалежна мова, то name не еквівалентно Name
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-                <button class="course-practice__close">Згорнути</button>
+                    </li>
+                  </ul>
+                  <button class="course-practice__close">Згорнути</button>
+                </div>
+                
               </article>
             </div>
 

@@ -1,0 +1,15 @@
+.courses-individual {
+  padding: 10px 0 160px;
+  position: relative;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+
+@import 'course-article/course-article';
+@import 'course-practice/course-practice';
+@import 'course-aside/course-aside';

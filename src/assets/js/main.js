@@ -1,6 +1,7 @@
 import stickyHeader from './modules/stickyHeader.js';
 import blogCardStyle from './modules/blogCardStyle.js';
 import coursesCardStyle from './modules/coursesCardStyle.js';
+import courseAsideStyle from './modules/courseAsideStyle.js';
 import formValidation from './modules/formValidation.js';
 import forms from './modules/forms.js';
 import select from './modules/select.js';
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   blogCardStyle();
   // content overflow control (courses items)
   coursesCardStyle();
+  // accordion course-aside
+  courseAsideStyle();
   // slider for Articles section
   try {
     const swiperArticles = new Swiper('.articles-wrapper.swiper', {
@@ -76,7 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // sending form data on server
   forms();
   // select styling
-  select(document.querySelector('.blog-category__sort'));
+  try {
+    select(document.querySelector('.blog-category__sort'));
+  } catch(e) {}
   // img gallery
-  gallery(document.querySelectorAll('[data-gallery]'));
+  try {
+    gallery(document.querySelectorAll('[data-gallery]'));
+  } catch(e) {}
 });

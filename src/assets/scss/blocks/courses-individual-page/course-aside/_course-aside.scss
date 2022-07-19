@@ -1,0 +1,152 @@
+.course-aside {
+  min-width: 285px;
+}
+
+.course-nav {
+  background: $white-color;
+  box-shadow: 0px 3px 23px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  &__list {
+    list-style-type: none;
+    counter-reset: section;
+    &-title {
+      font-family: $segoeUI-font;
+      font-weight: $font-semibold;
+      font-size: $fz-6;
+      line-height: 112%;
+      color: $black-color;
+      padding: 18px 20px 18px 43px;
+      cursor: pointer;
+    }
+
+    &-item {
+      position: relative;
+      transition: .2s;
+      &::after {
+        counter-increment: section;
+        content: counter(section, decimal-leading-zero) ".";
+        position: absolute;
+        top: 21px;
+        left: 15px;
+
+        font-family: $bitter-font;
+        font-weight: $font-black;
+        font-size: $fz-7;
+        line-height: 120%;
+        text-align: right;
+        color: $red-color;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        height: 1px;
+        width: 255px;
+        background-color: $border-color;
+      }
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+      &.active {
+        .course-nav__list-title {
+          font-weight: $font-bold;
+          color: $white-color;
+          background-color: $red-color;
+        }
+        &::before {
+          display: none;
+        }
+        &::after {
+          color: $white-color;
+        }
+        &.visible {
+          &::before {
+            display: block;
+          }
+        }
+      }
+      &.visible {
+        ol {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          height: auto;
+          padding: 2px 15px 15px;
+          visibility: visible;
+        }
+      }
+      ol {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        height: 0;
+        padding: 0;
+        visibility: hidden;
+        list-style-type: none;
+        counter-reset: li;
+        transition: height .4s linear, clip-path .4s linear;
+        li {
+          position: relative;
+          border-radius: 4px;
+          transition: .1s;
+          &::after {
+            counter-increment: li;
+            content: counter(li, decimal) ".";
+            position: absolute;
+            top: 6px;
+            left: 3px;
+    
+            display: block;
+            width: 20px;
+            font-family: $segoeUI-font;
+            font-weight: $font-semibold;
+            font-size: $fz-7;
+            line-height: 1;
+            text-align: right;
+            color: #ADAEB1;
+            transition: .1s;
+          }
+          a {
+            padding: 4px 30px 6px;
+            line-height: 124%;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-weight: $font-regular;
+            font-size: $fz-7;
+            color: $black-color;
+            transition: .1s;
+          }
+          &.active {
+            background-color: $red-color;
+            &::after {
+              color: $white-color;
+              font-weight: $font-bold;
+            }
+            a {
+              font-weight: $font-bold;
+              color: $white-color;
+            }
+            &:hover {
+              &::after {
+                color: $white-color;
+                font-weight: $font-bold;
+              }
+            }
+          }
+          &:hover {
+            &::after {
+              color: $black-color;
+              font-weight: $font-bold;
+            }
+            a {
+              font-weight: $font-bold;
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}
