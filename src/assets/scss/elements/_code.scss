@@ -1,0 +1,18 @@
+pre {
+  background: #F7F8FA;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  padding: 2px 20px;
+  code {
+    font-size: $fz-7;
+    line-height: 170%;
+    letter-spacing: -0.01em;
+    color: $black-color;
+  }
+}
+.code-blue {
+  color: #00A3FF;
+}
+.code-red {
+  color: $red-color;
+}

@@ -6,6 +6,7 @@ import formValidation from './modules/formValidation.js';
 import forms from './modules/forms.js';
 import select from './modules/select.js';
 import gallery from './modules/gallery.js';
+import showHideContent from './modules/showHideContent.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -85,5 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // img gallery
   try {
     gallery(document.querySelectorAll('[data-gallery]'));
+  } catch(e) {}
+
+  try {
+    showHideContent('.course-practice', '.course-practice__title', '.course-practice__close');
+  } catch(e) {}
+  try {
+    showHideContent('.course-practice__answer', '.course-practice__answer-title');
   } catch(e) {}
 });

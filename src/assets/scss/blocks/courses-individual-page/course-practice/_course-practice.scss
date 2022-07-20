@@ -2,7 +2,21 @@
   background: $white-color;
   box-shadow: 0px 3px 23px rgba(0, 0, 0, 0.07);
   border-radius: 8px;
-  padding: 0 20px 30px;
+  padding: 0 20px;
+  &.open {
+    padding: 0 20px 30px;
+    .course-practice__title {    
+      &::after {
+        transform: rotate(180deg);
+        top: 40%;
+      }
+    }
+    .course-practice__content {
+      height: auto;
+      padding-top: 30px;
+      border-top: 1px solid $border-color;  
+    }
+  }
   &__title {
     position: relative;
     display: block;
@@ -14,8 +28,6 @@
     letter-spacing: 0.01em;
     color: $black-color;
     padding: 25px 0;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 30px;
     cursor: pointer;
     &::after {
       content: '';
@@ -24,9 +36,114 @@
       border: 9px solid transparent;
       border-top: 9px solid $black-color;
       position: absolute;
-      top: 50%;
+      top: 47%;
       right: 10px;
-      transition: .3s;
+      /* transition: transform .2s; */
+    }
+  }
+  &__content {
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  &__questions {
+    list-style-type: none;
+  }
+  &__question {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 30px;
+    }
+    &-num {
+      font-family: $bitter-font;
+      font-weight: $font-bold;
+      font-size: $fz-4;
+      line-height: 1;
+      color: $black-color;
+      margin-bottom: 10px;
+    }
+    &-text {
+      margin-bottom: 20px;
+      p {
+        font-size: $fz-5;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: $black-color;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__answer {
+    background: $white-color;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    padding: 0 20px;
+    &.open {
+      padding: 0px 20px 20px;
+      .course-practice__answer-title {   
+        margin-bottom: 15px;
+        border-bottom: 1px solid $border-color; 
+        &::after {
+          transform: rotate(180deg);
+          top: 20%;
+        }
+      }
+      .course-practice__answer-text {
+        height: auto;
+      }
+    }
+    &-title {
+      position: relative;
+      display: block;
+      width: 100%;
+      font-family: $bitter-font;
+      font-weight: $font-bold;
+      font-size: $fz-5;
+      line-height: 1;
+      color: $black-color;
+      padding: 15px 0 15px;
+      border-bottom: none;
+      margin-bottom: 0; 
+      cursor: pointer;
+      &::after {
+        content: '';
+        width: 18px;
+        height: 18px;
+        border: 9px solid transparent;
+        border-top: 9px solid $black-color;
+        position: absolute;
+        top: 42%;
+        right: 0;
+        /* transition: transform .2s; */
+      }
+    }
+    &-text {
+      overflow: hidden;
+      height: 0;
+      p {
+        font-weight: $font-regular;
+        font-size: $fz-6;
+        line-height: 162%;
+        letter-spacing: -0.01em;
+        color: $black-color;
+      }
+    }
+  }
+  &__close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: $bitter-font;
+    font-weight: $font-semibold;
+    font-size: $fz-6;
+    line-height: 120%;
+    text-decoration-line: underline;
+    color: $black-color;
+    align-self: flex-end;
+    transition: .1s;
+    &:hover {
+      color: $red-color;
     }
   }
 }

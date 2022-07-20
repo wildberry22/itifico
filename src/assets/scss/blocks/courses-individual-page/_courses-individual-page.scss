@@ -1,6 +1,45 @@
 .courses-individual {
   padding: 10px 0 160px;
   position: relative;
+  &::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-1.svg');
+    position: absolute;
+    top: 0;
+    left: -100px;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-1.svg');
+    position: absolute;
+    bottom: -50px;
+    right: -100px;
+    z-index: -1;
+  }
+  &__wrapper {
+    position: relative;
+    &::before {
+      content: 'Курс по C#';
+      position: absolute;
+      top: 335px;
+      left: -484px;
+      transform: rotate(-90deg);
+      font-family: $source-serif-pro-font;
+      font-weight: $font-black;
+      font-size: 130px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px $black-color;
+    }
+  }
   &__inner {
     display: flex;
     justify-content: space-between;

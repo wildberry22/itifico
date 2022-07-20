@@ -103,6 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_forms_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/forms.js */ "./src/assets/js/modules/forms.js");
 /* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
 /* harmony import */ var _modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/gallery.js */ "./src/assets/js/modules/gallery.js");
+/* harmony import */ var _modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/showHideContent.js */ "./src/assets/js/modules/showHideContent.js");
+
 
 
 
@@ -189,6 +191,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   try {
     Object(_modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelectorAll('[data-gallery]'));
+  } catch (e) {}
+
+  try {
+    Object(_modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.course-practice', '.course-practice__title', '.course-practice__close');
+  } catch (e) {}
+
+  try {
+    Object(_modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.course-practice__answer', '.course-practice__answer-title');
   } catch (e) {}
 });
 
@@ -605,6 +615,32 @@ function select(containerElem) {
       });
     });
   }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/showHideContent.js":
+/*!**************************************************!*\
+  !*** ./src/assets/js/modules/showHideContent.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return showHideContent; });
+function showHideContent(elemSelector, titleSelector) {
+  let closeBtnSelector = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  const elem = document.querySelectorAll(elemSelector);
+  elem.forEach(item => {
+    const title = item.querySelector(titleSelector);
+    title.addEventListener('click', () => item.classList.toggle('open'));
+
+    if (closeBtnSelector) {
+      const closeBtn = item.querySelector(closeBtnSelector);
+      closeBtn.addEventListener('click', () => item.classList.remove('open'));
+    }
+  });
 }
 
 /***/ }),
