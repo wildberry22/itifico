@@ -191,10 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   try {
     Object(_modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelectorAll('[data-gallery]'));
-  } catch (e) {}
+  } catch (e) {} // show-hide content (accordion)
+
 
   try {
-    Object(_modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.course-practice', '.course-practice__title', '.course-practice__close');
+    Object(_modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.course-practice', '#practice-title', '.course-practice__close');
   } catch (e) {}
 
   try {

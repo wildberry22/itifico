@@ -1,0 +1,138 @@
+.courses-practice {
+  padding: 10px 0 160px;
+  position: relative;
+  &::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url('../img/background/img-1.svg');
+    position: absolute;
+    top: 0;
+    left: -100px;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    width: 530px;
+    height: 500px;
+    background: url('../img/background/img-3.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 130px;
+    right: 75px;
+    z-index: -1;
+  }
+  &__wrapper {
+    position: relative;
+    &::before {
+      content: 'Practice';
+      position: absolute;
+      top: 276px;
+      left: -423px;
+      transform: rotate(-90deg);
+      font-family: $source-serif-pro-font;
+      font-weight: $font-black;
+      font-size: 130px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px $black-color;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  &__title--main {
+    margin-bottom: 60px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  &__titles {
+    max-width: 750px;
+  }
+  &__subtitle {
+    font-family: $segoeUI-font;
+    font-weight: $font-bold;
+    font-size: 20px;
+    line-height: 1;
+    color: $txt-color;
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-family: $bitter-font;
+    font-weight: $font-bold;
+    font-size: 40px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    color: $black-color;
+  }
+  &__num {
+    position: relative;
+    font-family: $bitter-font;
+    font-weight: $font-black;
+    font-size: 80px;
+    line-height: 124%;
+    line-height: 1;
+    color: $gray2-color;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -30px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #F3F4F5;
+      z-index: -1;
+    }
+  }
+  &__btn {
+    width: 250px;
+    padding: 20px 95px 19px 35px;
+    align-self: flex-start;
+    position: relative;
+      &::after {
+        content: url("data:image/svg+xml;charset=UTF-8,<svg width='40' height='12' viewBox='0 0 40 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M40 6.00012L34 12L34 7.18093L34 4.81915L34 1.36127e-06L40 6.00012Z' fill='%23E36F59'/><line y1='-1' x2='34.4444' y2='-1' transform='matrix(-1 -1.66103e-07 -1.84559e-07 1 34.4453 7)' stroke='%23E36F59' stroke-width='2'/></svg>");
+        position: absolute;
+        top: 50%;
+        right: 35px;
+        transform: translateY(-45%);
+        transition: .2s;
+      }
+      &:hover {
+        &::after {
+          content: url("data:image/svg+xml;charset=UTF-8,<svg width='40' height='12' viewBox='0 0 40 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M40 6.00012L34 12L34 7.18093L34 4.81915L34 1.36127e-06L40 6.00012Z' fill='%23FFFFFF'/><line y1='-1' x2='34.4444' y2='-1' transform='matrix(-1 -1.66103e-07 -1.84559e-07 1 34.4453 7)' stroke='%23FFFFFF' stroke-width='2'/></svg>");
+          right: 25px;
+        }
+    }
+  }
+
+
+  .course-practice {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+  }
+  .course-practice__content {
+    height: auto;
+  }
+  .course-practice__question-num {
+    font-size: $fz-3;
+  }
+  .course-practice__question:last-child {
+    margin-bottom: 60px;
+  }
+}
+

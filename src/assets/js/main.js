@@ -87,9 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
   try {
     gallery(document.querySelectorAll('[data-gallery]'));
   } catch(e) {}
-
+  // show-hide content (accordion)
   try {
-    showHideContent('.course-practice', '.course-practice__title', '.course-practice__close');
+    showHideContent('.course-practice', '#practice-title', '.course-practice__close');
   } catch(e) {}
   try {
     showHideContent('.course-practice__answer', '.course-practice__answer-title');

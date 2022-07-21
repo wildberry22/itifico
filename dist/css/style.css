@@ -2310,3 +2310,116 @@ pre {
             font-weight: 700; }
           .course-nav__list-item ol li:hover a {
             font-weight: 700; }
+
+.courses-practice {
+  padding: 10px 0 160px;
+  position: relative; }
+  .courses-practice::before {
+    content: '';
+    width: 857px;
+    height: 695px;
+    background: url("../img/background/img-1.svg");
+    position: absolute;
+    top: 0;
+    left: -100px;
+    z-index: -1; }
+  .courses-practice::after {
+    content: '';
+    width: 530px;
+    height: 500px;
+    background: url("../img/background/img-3.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 130px;
+    right: 75px;
+    z-index: -1; }
+  .courses-practice__wrapper {
+    position: relative; }
+    .courses-practice__wrapper::before {
+      content: 'Practice';
+      position: absolute;
+      top: 276px;
+      left: -423px;
+      transform: rotate(-90deg);
+      font-family: "Source Serif Pro", serif;
+      font-weight: 900;
+      font-size: 130px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.06;
+      color: transparent;
+      -webkit-text-stroke: 2px #23262D; }
+  .courses-practice__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; }
+  .courses-practice__title--main {
+    margin-bottom: 60px; }
+  .courses-practice__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 60px; }
+  .courses-practice__titles {
+    max-width: 750px; }
+  .courses-practice__subtitle {
+    font-family: "SegoeUI", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    color: #606268;
+    margin-bottom: 10px; }
+  .courses-practice__title {
+    font-family: "Bitter", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    color: #23262D; }
+  .courses-practice__num {
+    position: relative;
+    font-family: "Bitter", serif;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 124%;
+    line-height: 1;
+    color: #C4CACF; }
+    .courses-practice__num::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -30px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #F3F4F5;
+      z-index: -1; }
+  .courses-practice__btn {
+    width: 250px;
+    padding: 20px 95px 19px 35px;
+    align-self: flex-start;
+    position: relative; }
+    .courses-practice__btn::after {
+      content: url("data:image/svg+xml;charset=UTF-8,<svg width='40' height='12' viewBox='0 0 40 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M40 6.00012L34 12L34 7.18093L34 4.81915L34 1.36127e-06L40 6.00012Z' fill='%23E36F59'/><line y1='-1' x2='34.4444' y2='-1' transform='matrix(-1 -1.66103e-07 -1.84559e-07 1 34.4453 7)' stroke='%23E36F59' stroke-width='2'/></svg>");
+      position: absolute;
+      top: 50%;
+      right: 35px;
+      transform: translateY(-45%);
+      transition: .2s; }
+    .courses-practice__btn:hover::after {
+      content: url("data:image/svg+xml;charset=UTF-8,<svg width='40' height='12' viewBox='0 0 40 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M40 6.00012L34 12L34 7.18093L34 4.81915L34 1.36127e-06L40 6.00012Z' fill='%23FFFFFF'/><line y1='-1' x2='34.4444' y2='-1' transform='matrix(-1 -1.66103e-07 -1.84559e-07 1 34.4453 7)' stroke='%23FFFFFF' stroke-width='2'/></svg>");
+      right: 25px; }
+  .courses-practice .course-practice {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent; }
+  .courses-practice .course-practice__content {
+    height: auto; }
+  .courses-practice .course-practice__question-num {
+    font-size: 30px; }
+  .courses-practice .course-practice__question:last-child {
+    margin-bottom: 60px; }
