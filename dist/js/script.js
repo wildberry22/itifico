@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_select_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/select.js */ "./src/assets/js/modules/select.js");
 /* harmony import */ var _modules_gallery_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/gallery.js */ "./src/assets/js/modules/gallery.js");
 /* harmony import */ var _modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/showHideContent.js */ "./src/assets/js/modules/showHideContent.js");
+/* harmony import */ var _modules_preloader_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/preloader.js */ "./src/assets/js/modules/preloader.js");
 
 
 
@@ -112,6 +113,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+ // script for preloader
+
+if (document.querySelector('.preloader')) {
+  Object(_modules_preloader_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // script to hide the header when scrolling down and show it when scrolling up
@@ -585,6 +592,30 @@ function gallery(imgWrapper) {
       };
     }
   }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/preloader.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/modules/preloader.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return preloader; });
+function preloader() {
+  window.setTimeout(function () {
+    document.querySelector('body').style.overflowY = 'auto';
+    document.querySelector('html').style.overflowY = 'auto';
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 800);
+  }, 4200);
 }
 
 /***/ }),

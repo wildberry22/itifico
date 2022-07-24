@@ -7,7 +7,13 @@ import forms from './modules/forms.js';
 import select from './modules/select.js';
 import gallery from './modules/gallery.js';
 import showHideContent from './modules/showHideContent.js';
+import preloader from './modules/preloader.js';
 
+
+// script for preloader
+if(document.querySelector('.preloader')) {
+  preloader();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // script to hide the header when scrolling down and show it when scrolling up
@@ -94,4 +100,5 @@ document.addEventListener("DOMContentLoaded", () => {
   try {
     showHideContent('.course-practice__answer', '.course-practice__answer-title');
   } catch(e) {}
+ 
 });

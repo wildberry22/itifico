@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" style="overflow-y: hidden;">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,11 +24,73 @@
   <meta name="theme-color" content="#ffffff">
 	<!-- ========== Title ========== -->
 	<title>ITifico | Homepage</title>
-	<!-- ========== Links ========== -->
+	
+  <style>
+    .preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .preloader-text {
+      width: 30ch;
+      position: relative;
+      font-family: 'Consolas', monospace;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 1.1;
+      color: #23262D;
+      text-align: center;
+
+      margin: 0 auto;
+      margin-top: -80px;
+      border-right: 3px solid#23262D;
+      white-space: nowrap;
+      overflow: hidden;
+
+      animation: typewriter 3s steps(30) 650ms 1 normal both,
+              blinkTextCursor 500ms steps(30) infinite normal;
+    }
+
+    .preloader-text span {
+      color: #E36F59;
+    }
+
+    .loaded_hiding .preloader {
+      transition: 0.5s opacity;
+      opacity: 0;
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+
+    @keyframes typewriter{
+      from{width: 0;}
+      to{width: 30ch;}
+    }
+    @keyframes blinkTextCursor{
+      from{border-right-color: #23262D;}
+      to{border-right-color: transparent;}
+    }
+  </style>
+  <!-- ========== Links ========== -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="overflow-y: hidden;">
+  
+  <!-- ========== Preloader ========== -->
+  <div class="preloader">
+    <div class="preloader-text">console.log(<span>"Starting site!"</span>);</div>
+  </div>
+
 
   <!-- ========== Header ========== -->
   <header class="header">
