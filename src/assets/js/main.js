@@ -8,6 +8,7 @@ import select from './modules/select.js';
 import gallery from './modules/gallery.js';
 import showHideContent from './modules/showHideContent.js';
 import preloader from './modules/preloader.js';
+import langChange from './modules/langChange.js';
 
 
 // script for preloader
@@ -18,6 +19,8 @@ if(document.querySelector('.preloader')) {
 document.addEventListener("DOMContentLoaded", () => {
   // script to hide the header when scrolling down and show it when scrolling up
   stickyHeader();
+  // changing language on the page
+  langChange();
   // content overflow control and card animation (blog cards)
   blogCardStyle();
   // content overflow control (courses items)

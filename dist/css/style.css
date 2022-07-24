@@ -832,7 +832,7 @@ pre {
       background-color: #E36F59;
       color: #FFFFFF;
       border: 2px solid #E36F59;
-      pointer-events: none; }
+      cursor: default; }
     .header .lang-switch {
       display: flex;
       align-items: center; }
@@ -911,7 +911,7 @@ pre {
     margin-bottom: 15px;
     font-family: "SegoeUI", sans-serif;
     font-weight: 700;
-    font-size: fz-6;
+    font-size: 16px;
     line-height: 138%; }
     .blog-card__title a {
       color: #23262D;
