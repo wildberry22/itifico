@@ -84,3 +84,26 @@ body {
     visibility: visible;
   }
 }
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: $fz-2;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: $fz-3;
+  }
+}
