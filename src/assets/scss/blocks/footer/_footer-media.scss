@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    display: block;
+  }
+  .footer-copy {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: $fz-7;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+  .footer-social__link {
+    padding: 10px 20px;
+  }
+  .footer-social__item:last-child .footer-social__link {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-social__link {
+    font-size: $fz-7;
+  }
+  .footer-copy {
+    font-size: 12px;
+  }
+}

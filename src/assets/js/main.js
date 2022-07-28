@@ -104,4 +104,31 @@ document.addEventListener("DOMContentLoaded", () => {
     showHideContent('.course-practice__answer', '.course-practice__answer-title');
   } catch(e) {}
  
+  // header adaptive menu
+  const menuBtnEl = document.querySelector('.menu-btn');
+  const menuEl = document.querySelector('.menu-list');
+  const shadow = document.querySelector('.menu-shadow');
+
+  menuBtnEl.addEventListener('click', () => {
+    menuBtnEl.classList.toggle('active');
+    menuEl.classList.toggle('active');
+    shadow.classList.toggle('active');
+    if (menuEl.classList.contains('active')) {
+      document.querySelector('body').style.overflowY = 'hidden';
+      document.querySelector('html').style.overflowY = 'hidden';
+    } else {
+      document.querySelector('body').style.overflowY = 'auto';
+      document.querySelector('html').style.overflowY = 'auto';
+    }
+  });
+  setInterval(() => {
+    if(window.innerWidth > 768 ) {
+      menuBtnEl.classList.remove('active');
+      menuEl.classList.remove('active');
+      shadow.classList.remove('active');
+      document.querySelector('body').style.overflowY = 'auto';
+      document.querySelector('html').style.overflowY = 'auto';
+    }
+  }, 100);
+
 });

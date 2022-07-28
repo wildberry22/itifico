@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" style="overflow-y: hidden;">
+<html lang="uk" style="overflow-y: auto;">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,7 @@
 	<!-- ========== Title ========== -->
 	<title>ITifico | Homepage</title>
 	
+  <!-- ========== Preloader Styles ========== -->
   <style>
     .preloader {
       position: fixed;
@@ -71,6 +72,33 @@
       display: none;
     }
 
+    @media screen and (max-height: 800px) {
+      .preloader-text {
+        margin-top: 0;
+      }
+    }
+
+    @media screen and (max-width: 1240px) {
+      .preloader-text {
+        font-size: 4.5vw;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .preloader-text {
+        font-size: 5vw;
+        border-right: 2px solid#23262D;
+      }
+    }
+
+    @media screen and (max-width: 568px) {
+      .preloader-text {
+        font-size: 5.5vw;
+      }
+    }
+
+
+
     @keyframes typewriter{
       from{width: 0;}
       to{width: 30ch;}
@@ -80,16 +108,17 @@
       to{border-right-color: transparent;}
     }
   </style>
+
   <!-- ========== Links ========== -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body style="overflow-y: hidden;">
+<body style="overflow-y: auto;">
 
   <!-- ========== Preloader ========== -->
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="preloader-text">console.log(<span>"Starting site!"</span>);</div>
-  </div>
+  </div> -->
 
 
   <!-- ========== Header ========== -->
@@ -107,7 +136,19 @@
               <li class="menu-list__item"><a class="menu-list__link" id="about" href="about.html">Про мене</a></li>
               <li class="menu-list__item"><a class="menu-list__link" id="subscription" href="#">Підписка на сайт</a></li>
               <li class="menu-list__item"><a class="menu-list__link" id="support" href="support.html">Підтримка</a></li>
+              <li class="menu-list__footer">
+                <div class="menu-list__footer-wrapper">
+                  <a class="menu-list__footer-link" href="#">Linkedin</a>
+                  <a class="menu-list__footer-link" href="#">Telegram</a>
+                  <a class="menu-list__footer-link" href="#">Gmail</a>
+                </div>
+              </li>
             </ul>
+            <button class="menu-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </nav>
           <div class="lang-switch">
             <a class="lang active" href="#" data-lang="uk">ukr</a>
@@ -117,6 +158,8 @@
       </div>
     </div>
   </header>
+  
+  <div class="menu-shadow"></div>
   
 
   <main class="main">
@@ -129,7 +172,8 @@
               <span>ITifico</span> — платформа для вашого вивчення коду
             </h1>
             <div class="hero-content__descr">
-              Курси для початківців і просунутих програмістів, а також цікаві статті. Приєднуйтесь і дозвольте нам підтримати вас у вашій кар’єрі
+              Курси для початківців і про
+              сунутих програмістів, а також цікаві статті. Приєднуйтесь і дозвольте нам підтримати вас у вашій кар’єрі
             </div>
             <button class="btn hero-content__btn">Call to action</button>
             <div class="hero-scroll">

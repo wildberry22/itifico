@@ -211,7 +211,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   try {
     Object(_modules_showHideContent_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.course-practice__answer', '.course-practice__answer-title');
-  } catch (e) {}
+  } catch (e) {} // header adaptive menu
+
+
+  const menuBtnEl = document.querySelector('.menu-btn');
+  const menuEl = document.querySelector('.menu-list');
+  const shadow = document.querySelector('.menu-shadow');
+  menuBtnEl.addEventListener('click', () => {
+    menuBtnEl.classList.toggle('active');
+    menuEl.classList.toggle('active');
+    shadow.classList.toggle('active');
+
+    if (menuEl.classList.contains('active')) {
+      document.querySelector('body').style.overflowY = 'hidden';
+      document.querySelector('html').style.overflowY = 'hidden';
+    } else {
+      document.querySelector('body').style.overflowY = 'auto';
+      document.querySelector('html').style.overflowY = 'auto';
+    }
+  });
+  setInterval(() => {
+    if (window.innerWidth > 768) {
+      menuBtnEl.classList.remove('active');
+      menuEl.classList.remove('active');
+      shadow.classList.remove('active');
+      document.querySelector('body').style.overflowY = 'auto';
+      document.querySelector('html').style.overflowY = 'auto';
+    }
+  }, 100);
 });
 
 /***/ }),
@@ -610,8 +637,6 @@ function gallery(imgWrapper) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return langChange; });
-/* harmony import */ var _coursesCardStyle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./coursesCardStyle.js */ "./src/assets/js/modules/coursesCardStyle.js");
-
 function langChange() {
   const langSelect = document.querySelector('.lang-switch');
   const lang = langSelect.querySelectorAll('.lang');
@@ -624,6 +649,7 @@ function langChange() {
     try {
       changeURLLang();
       changeLang();
+      location.reload();
     } catch (e) {}
   });
 

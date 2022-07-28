@@ -1,5 +1,3 @@
-import blogCardStyle from './coursesCardStyle.js';
-
 export default function langChange() {
   const langSelect = document.querySelector('.lang-switch');
   const lang = langSelect.querySelectorAll('.lang');
@@ -13,6 +11,7 @@ export default function langChange() {
     try {
       changeURLLang();
       changeLang();
+      location.reload();
     } catch(e) {}
     
   });
@@ -87,6 +86,7 @@ export default function langChange() {
     document.querySelector('#name-input').setAttribute('placeholder', langArr[hash]["main-page"]["mailing-name-placeholder"]);
     document.querySelector('#email-input').setAttribute('placeholder', langArr[hash]["main-page"]["mailing-email-placeholder"]);
     document.querySelector('.mailing__btn').innerHTML = langArr[hash]["main-page"]["mailing-btn"];
+
   }
 
   try {
