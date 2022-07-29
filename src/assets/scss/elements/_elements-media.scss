@@ -1,0 +1,42 @@
+@media screen and (max-width: 568px) { 
+  .pagination-list {
+    gap: 6px;
+  }
+  .pagination-list__item.gap {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) { 
+  .pagination-list__item {
+    width: 30px;
+    height: 30px;
+  }
+  .pagination-list__item a {
+    font-size: $fz-7;
+    padding: 7px 0;
+  }
+  .pagination-list {
+    gap: 4px;
+  }
+  .pagination-arrow svg {
+    width: 30px;
+    path {
+      fill: $red-color;
+    }
+    line {
+      stroke: $red-color;
+    }
+  }
+  .pagination-arrow::before {
+    border-color: $red-color;
+    width: 30px;
+    height: 30px;
+  }
+  .pagination-arrow-next {
+    right: 10px;
+  }
+  .pagination-arrow-prev {
+    left: 10px;
+  }
+}

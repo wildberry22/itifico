@@ -1,0 +1,9 @@
+@media screen and (max-width: 1240px) { 
+  .blog-card {
+    max-width: max-content;
+    min-height: auto;
+  }
+  .blog-card__content {
+    min-height: 235px;
+  }
+}
