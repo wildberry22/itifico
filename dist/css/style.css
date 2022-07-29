@@ -1902,6 +1902,61 @@ pre {
       .courses-list__item-more:hover {
         font-weight: 700; }
 
+@media screen and (max-width: 1525px) {
+  .courses-wrapper::before {
+    display: none; } }
+
+@media screen and (max-width: 1140px) {
+  .courses-list {
+    grid-template-columns: repeat(3, 1fr); }
+  .courses-list__item {
+    min-height: auto;
+    max-width: fit-content; }
+  .courses-list__item-info {
+    min-height: 165px; }
+  .courses-list__item-descr {
+    margin-bottom: 20px; } }
+
+@media screen and (max-width: 1024px) {
+  .courses-list__item-info {
+    min-height: 230px; } }
+
+@media screen and (max-width: 900px) {
+  .courses-catalog {
+    padding: 10px 0 100px; }
+  .courses-list__item-info {
+    min-height: 165px; }
+  .courses-list {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 660px) {
+  .courses-list__item-info {
+    min-height: 230px; } }
+
+@media screen and (max-width: 568px) {
+  .courses-catalog::before {
+    top: -138px;
+    left: -343px; }
+  .courses-catalog::after {
+    bottom: -40px;
+    right: -415px; }
+  .courses__title {
+    margin-bottom: 30px; }
+  .courses-list {
+    grid-template-columns: repeat(1, 1fr); }
+  .courses-list__item-info {
+    min-height: 140px; } }
+
+@media screen and (max-width: 480px) {
+  .courses-catalog {
+    padding: 10px 0 60px; } }
+
+@media screen and (max-width: 375px) {
+  .courses-list__item-logo {
+    margin-bottom: 20px; }
+  .courses-list__item-title {
+    font-size: 20px; } }
+
 .blog-individual {
   padding: 10px 0 160px;
   position: relative; }
