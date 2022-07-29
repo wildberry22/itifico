@@ -1,0 +1,149 @@
+@media screen and (max-width: 1525px) {
+  .about-wrapper::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .about::before {
+    top: -60px;
+    left: -270px;
+  }
+  .about::after {
+    bottom: -40px;
+    right: -300px;
+  }
+  .about-info__photo img {
+    max-width: 535px;
+  }
+  .about-contact {
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-contact {
+    padding: 60px 30px;
+  }
+  .about-contact__btn {
+    padding: 22px 45px;
+  }
+  .about-info {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .about-info__descr {
+    max-width: max-content;
+    order: 2;
+  }
+  .about-info__photo {
+    order: 1;
+  }
+  .about-info__photo img {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about {
+    padding: 10px 0 100px;
+  }
+  .about::before {
+    top: -60px;
+    left: -154px;
+  }
+  .about-contact {
+    padding: 50px 30px;
+  }
+  .about-contact__title {
+    text-align: center;
+    font-size: 40px;
+  }
+  .title-sm::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .about-contact__form {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about-contact__btn {
+    padding: 16px 50px;
+  }
+  .about-contact__input-wrapper {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .about__title {
+    margin-bottom: 30px;
+  }
+  .about-info__descr p {
+    margin-bottom: 20px;
+  }
+  .about-info {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 660px) { 
+  .about-contact__input-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) { 
+  .about::before {
+    top: -138px;
+    left: -343px;
+  }
+  .about::after {
+    bottom: -40px;
+    right: -415px;
+  }
+  .about-info__descr p {
+    font-size: $fz-6;
+  }
+  .about-contact {
+    padding: 40px 30px;
+  }
+  .about-contact__title {
+    font-size: $fz-3;
+  }
+  .about-contact__form {
+    gap: 15px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 10px 0 60px;
+  }
+  .about-info {
+    margin-bottom: 20px;
+  }
+  .about-info__photo img {
+    height: 290px;
+  }
+  .about-info__descr p {
+    font-size: $fz-7;
+  }
+  .about-contact {
+    padding: 30px 20px;
+  }
+  .about-contact__title {
+    font-size: $fz-4;
+    margin-bottom: 30px;
+  }
+  .about-contact__btn {
+    padding: 13px 50px;
+  }
+  .about-contact__form {
+    gap: 20px;
+  }
+}

@@ -1,3 +1,13 @@
+@media screen and (max-width: 900px) {
+  .input {
+    padding: 13px 77px 15px 20px;
+  }
+  .input-icon {
+    width: 50px;
+    height: 32px;
+  }
+}
+
 @media screen and (max-width: 568px) { 
   .pagination-list {
     gap: 6px;
@@ -38,5 +48,11 @@
   }
   .pagination-arrow-prev {
     left: 10px;
+  }
+  .input {
+    font-size: $fz-7;
+  }
+  .error-msg {
+    bottom: -16px;
   }
 }

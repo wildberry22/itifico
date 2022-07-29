@@ -41,9 +41,6 @@
     right: 0;
     top: -64px;
   }
-  .blog-card__img-wrapper {
-    max-height: 170px;
-  }
 }
 
 @media screen and (max-width: 568px) {
@@ -67,9 +64,7 @@
   .blog-content {
     grid-template-columns: repeat(1, 1fr);
   }
-  .blog-card__img-wrapper {
-    max-height: 200px;
-  }
+  
 }
 
 @media screen and (max-width: 480px) {

@@ -7,3 +7,21 @@
     min-height: 235px;
   }
 }
+
+@media screen and (max-width: 768px) { 
+  .blog-card__img-wrapper {
+    max-height: 170px;
+  }
+}
+
+@media screen and (max-width: 568px) { 
+  .blog-card__img-wrapper {
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) { 
+  .blog-card__img-wrapper {
+    max-height: 192px;
+  }
+}
