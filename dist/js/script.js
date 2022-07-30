@@ -148,6 +148,29 @@ document.addEventListener("DOMContentLoaded", () => {
       navigation: {
         nextEl: ".articles-button-next.swiper-button-next",
         prevEl: ".articles-button-prev.swiper-button-prev"
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          allowTouchMove: true,
+          draggable: true
+        },
+        600: {
+          slidesPerView: 2,
+          allowTouchMove: true,
+          draggable: true
+        },
+        769: {
+          slidesPerView: 2,
+          draggable: false,
+          allowTouchMove: false
+        },
+        900: {
+          slidesPerView: 3
+        },
+        1240: {
+          slidesPerView: 4
+        }
       }
     });
   } catch (e) {} // slider for Courses section
@@ -167,6 +190,23 @@ document.addEventListener("DOMContentLoaded", () => {
       navigation: {
         nextEl: ".courses-button-next.swiper-button-next",
         prevEl: ".courses-button-prev.swiper-button-prev"
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          allowTouchMove: true,
+          draggable: true
+        },
+        568: {
+          slidesPerView: 2,
+          draggable: true,
+          allowTouchMove: true
+        },
+        769: {
+          slidesPerView: 2,
+          draggable: false,
+          allowTouchMove: false
+        }
       }
     });
   } catch (e) {} // slider for Articles section

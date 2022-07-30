@@ -1,5 +1,5 @@
 const langArr = {
-  "uk": {
+  "ua": {
     "header": {
       "blog": "Блог",
       "courses": "Курси",
@@ -9,7 +9,7 @@ const langArr = {
     },
 
     "main-page": {
-      "hero-title": "<span>ITifico</span> — платформа для вашого вивчення коду",
+      "hero-title": "ITifico — платформа для вашого вивчення коду",
       "hero-descr": "Курси для початківців і просунутих програмістів, а також цікаві статті. Приєднуйтесь і дозвольте нам підтримати вас у вашій кар’єрі",
       "hero-btn": "Call to action",
       "hero-scroll": "Гортай вниз",
@@ -22,7 +22,7 @@ const langArr = {
         "date": "5.05.2022"
       },
       "blog-card-2": {
-        "title": "Наскільки ефективне навчання з дрібницями на утримання",
+        "title": "Наскільки ефективне навчання з дрібницями на утримання та результати",
         "descr": "Питання максимізації уваги учнів і збільшення залученості переслідують вчителів на всіх рівнях шкільної програми",
         "date": "15.04.2022"
       },
@@ -32,7 +32,7 @@ const langArr = {
         "date": "23.04.2022"
       },
       "blog-card-4": {
-        "title": "Наскільки ефективне навчання з дрібницями на утримання",
+        "title": "Наскільки ефективне навчання з дрібницями на утримання та результати",
         "descr": "Питання максимізації уваги учнів і збільшення залученості переслідують вчителів на всіх рівнях шкільної програми",
         "date": "10.05.2022"
       },
@@ -75,18 +75,18 @@ const langArr = {
 
 
 
-  "en": {
+  "eng": {
     "header": {
       "blog": "Blog",
       "courses": "Courses",
       "about": "About me",
-      "subscription": "Subscription",
+      "subscription": "Subscription to the site",
       "support": "Support"
     },
 
     "main-page": {
-      "hero-title": "<span>ITifico</span> is a platform for your code learning",
-      "hero-descr": "Courses for beginners and advanced programmers, as well as interesting articles. Join us and let us support you in your professional career ",
+      "hero-title": "ITifico is a platform for your code learning",
+      "hero-descr": "Courses for beginners and advanced programmers, as well as interesting articles. Join us and let us support you in your career",
       "hero-btn": "Call to action",
       "hero-scroll": "Scroll down",
 

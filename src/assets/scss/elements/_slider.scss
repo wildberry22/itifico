@@ -88,3 +88,41 @@
     left: 10px;
   }
 }
+
+
+@media screen and (max-width: 480px) {
+  .swiper-button-next svg,
+  .swiper-button-prev svg {
+    width: 30px;
+    path {
+      fill: $red-color;
+    }
+    line {
+      stroke: $red-color;
+    }
+  }
+  .swiper-button-next::before,
+  .swiper-button-prev::before {
+    border-color: $red-color;
+    width: 30px;
+    height: 30px;
+  }
+  .swiper-button-next {
+    right: 20px;
+  }
+  .swiper-button-next:before {
+    left: 15px;
+  }
+  .swiper-button-prev {
+    left: 20px;
+  }
+  .swiper-button-prev:before {
+    right: 15px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 22px;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    bottom: 35px;
+  }
+}

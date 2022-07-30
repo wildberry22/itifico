@@ -109,4 +109,7 @@ body {
   .title {
     font-size: $fz-3;
   }
+  .title-sm::after {
+    height: 10px;
+  }
 }

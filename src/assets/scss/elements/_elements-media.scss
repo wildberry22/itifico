@@ -55,4 +55,19 @@
   .error-msg {
     bottom: -16px;
   }
+
+
+
+  .btn-outline {
+    background: transparent;
+    padding: 0;
+    border: none;
+    text-decoration-line: underline;
+    &:hover {
+      background: transparent;
+      padding: 0;
+      border: none;
+      text-decoration-line: underline;
+    }
+  }
 }

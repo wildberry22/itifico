@@ -159,8 +159,9 @@
       right: -70px;
     }
     img {
-      width: 590px;
+      max-width: 590px;
       max-height: 590px;
+      width: 100%;
       object-fit: cover;
     }
   } 
