@@ -121,6 +121,29 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: ".articles-button-next.swiper-button-next",
         prevEl: ".articles-button-prev.swiper-button-prev",
       },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          allowTouchMove: true,
+          draggable: true,
+        },
+        568: {
+          slidesPerView: 2,
+          draggable: true,
+          allowTouchMove: true,
+        },
+        769: {
+          slidesPerView: 2,
+          draggable: false,
+          allowTouchMove: false,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1140: {
+          slidesPerView: 3,
+        },
+      }
     });
   } catch(e) {}
 
@@ -173,4 +196,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 100);
 
+
+  if (window.innerWidth <= 568) {
+    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+    link.innerHTML.length > 30 ? link.innerHTML = link.innerHTML.slice(0, 30) + '...' : link.innerHTML;
+  }
+  if (window.innerWidth <= 400) {
+    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+    link.innerHTML.length > 20 ? link.innerHTML = link.innerHTML.slice(0, 20) + '...' : link.innerHTML;
+  }
 });

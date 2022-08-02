@@ -56,8 +56,7 @@
     bottom: -16px;
   }
 
-
-
+  
   .btn-outline {
     background: transparent;
     padding: 0;
@@ -68,6 +67,29 @@
       padding: 0;
       border: none;
       text-decoration-line: underline;
+      color: $red-color;
     }
   }
 }
+
+@media screen and (max-width: 440px) {
+  .breadcrumbs-list__link {
+    font-size: 12px;
+  }
+  .preview-box .details .title-gallery {
+    font-size: $fz-6;
+  }
+  .preview-box .details {
+    padding: 5px;
+  }
+  .preview-box .description {
+    padding: 5px;
+    font-size: $fz-7;
+  }
+  .preview-box .img-box .slide {
+    font-size: 30px;
+    width: 45px;
+    height: 40px;
+  }
+}
+

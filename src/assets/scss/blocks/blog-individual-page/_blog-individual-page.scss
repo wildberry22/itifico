@@ -51,3 +51,49 @@
 }
 
 @import 'article/article';
+
+@media screen and (max-width: 1525px) {
+  .blog-individual__wrapper::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .blog-individual .content-inner {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-individual .content-inner {
+    gap: 80px;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .blog-individual .breadcrumbs-list__item.active::before {
+    top: 26%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .blog-individual {
+    padding: 10px 0 100px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .blog-individual {
+    padding: 10px 0 60px;
+  }
+  .blog-individual .breadcrumbs-list__item.active::before {
+    top: 50%;
+  }
+  .blog-individual .content-inner {
+    gap: 60px;
+  }
+}
+
+@import 'article/article-media';
+
