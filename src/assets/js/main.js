@@ -169,12 +169,23 @@ document.addEventListener("DOMContentLoaded", () => {
     showHideContent('.course-practice__answer', '.course-practice__answer-title');
   } catch(e) {}
  
+  // style breadcrumbs on small screans
+  if (window.innerWidth <= 568) {
+    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+    link.innerHTML.length > 30 ? link.innerHTML = link.innerHTML.slice(0, 30) + '...' : link.innerHTML;
+  }
+  if (window.innerWidth <= 400) {
+    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+    link.innerHTML.length > 20 ? link.innerHTML = link.innerHTML.slice(0, 20) + '...' : link.innerHTML;
+  }
+
   // header adaptive menu
   const menuBtnEl = document.querySelector('.menu-btn');
   const menuEl = document.querySelector('.menu-list');
   const shadow = document.querySelector('.menu-shadow');
 
   menuBtnEl.addEventListener('click', () => {
+    shadow.style.transition = '.25s';
     menuBtnEl.classList.toggle('active');
     menuEl.classList.toggle('active');
     shadow.classList.toggle('active');
@@ -187,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   setInterval(() => {
-    if(window.innerWidth > 768 ) {
+    if(window.innerWidth > 768 && menuEl.classList.contains('active') ) {
       menuBtnEl.classList.remove('active');
       menuEl.classList.remove('active');
       shadow.classList.remove('active');
@@ -196,13 +207,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 100);
 
-
-  if (window.innerWidth <= 568) {
-    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
-    link.innerHTML.length > 30 ? link.innerHTML = link.innerHTML.slice(0, 30) + '...' : link.innerHTML;
-  }
-  if (window.innerWidth <= 400) {
-    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
-    link.innerHTML.length > 20 ? link.innerHTML = link.innerHTML.slice(0, 20) + '...' : link.innerHTML;
-  }
+  // course navigation adaptive
+  const titleBtn = document.querySelector('.course-aside__title');
+  const coursesList = document.querySelector('.course-nav');
+  
+  titleBtn.addEventListener('click', () => {
+    shadow.style.transition = '.6s';
+    titleBtn.classList.toggle('active');
+    coursesList.classList.toggle('active');
+    shadow.classList.toggle('active');
+    if (coursesList.classList.contains('active')) {
+      document.querySelector('header').style.zIndex = '1';
+    } else {
+      setTimeout(() => {
+        document.querySelector('header').style.zIndex = '1000';
+      }, 600);
+    }
+  });
+  setInterval(() => {
+    if (window.innerWidth > 900) {
+      shadow.classList.remove('active');
+      titleBtn.classList.remove('active');
+      coursesList.classList.remove('active');
+    }
+  }, 100);
 });

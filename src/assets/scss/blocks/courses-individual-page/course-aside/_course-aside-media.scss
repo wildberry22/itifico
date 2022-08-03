@@ -1,0 +1,42 @@
+@media screen and (max-width: 900px) {
+  .course-aside__title {
+    display: block;
+    &::before {
+      transition: .3s ease-in-out;
+    }
+    &.active {
+      z-index: 10000;
+      &::before {
+        transform: rotate(180deg) translateY(8px);
+      }
+    }
+  }
+  .course-aside {
+    width: 100%;
+  }
+  .course-nav__list-item::before {
+    width: 90%;
+  }
+  .course-aside {
+    position: relative;
+  }
+  .course-nav {
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: .4s ease-in-out;
+    top: 55px;
+    left: 0;
+    right: 0;
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 100;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .course-aside__title {
+    font-size: $fz-6;
+    padding: 16px;
+  }
+}

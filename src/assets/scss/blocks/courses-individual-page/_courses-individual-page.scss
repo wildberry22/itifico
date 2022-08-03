@@ -52,3 +52,31 @@
 @import 'course-article/course-article';
 @import 'course-practice/course-practice';
 @import 'course-aside/course-aside';
+
+@media screen and (max-width: 1525px) {
+  .courses-individual__wrapper::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .courses-individual__inner {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .courses-individual {
+    padding: 10px 0 100px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .courses-individual {
+    padding: 10px 0 60px;
+  }
+}
+
+@import 'course-article/course-article-media';
+@import 'course-practice/course-practice-media';
+@import 'course-aside/course-aside-media';

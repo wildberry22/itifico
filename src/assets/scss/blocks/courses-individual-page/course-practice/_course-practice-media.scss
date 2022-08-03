@@ -1,0 +1,46 @@
+@media screen and (max-width: 660px) {
+  .course-practice__title {
+    font-size: $fz-3;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .course-practice__title {
+    font-size: $fz-4;
+    border-bottom: 1px solid $border-color;
+  }
+  .course-practice.open .course-practice__content {
+    border-top: none;
+  }
+  .course-practice {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  .course-practice.open {
+    padding: 0;
+  }
+
+  .course-practice__question {
+    margin-bottom: 40px;
+  }
+  .course-practice__question-num {
+    font-size: 20px;
+  }
+  .course-practice__question-text p {
+    font-size: $fz-7;
+  }
+  .course-practice__answer {
+    padding: 0 15px;
+  }
+  .course-practice__answer.open {
+    padding: 0 15px 15px;
+  }
+  .course-practice__answer-text p {
+    font-size: $fz-7;
+  }
+  .course-practice__answer-title {
+    font-size: $fz-6;
+  }
+}
