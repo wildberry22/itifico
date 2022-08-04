@@ -315,29 +315,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 100); // course navigation adaptive
 
-  const titleBtn = document.querySelector('.course-aside__title');
-  const coursesList = document.querySelector('.course-nav');
-  titleBtn.addEventListener('click', () => {
-    shadow.style.transition = '.6s';
-    titleBtn.classList.toggle('active');
-    coursesList.classList.toggle('active');
-    shadow.classList.toggle('active');
+  try {
+    const titleBtn = document.querySelector('.course-aside__title');
+    const coursesList = document.querySelector('.course-nav');
+    titleBtn.addEventListener('click', () => {
+      shadow.style.transition = '.6s';
+      titleBtn.classList.toggle('active');
+      coursesList.classList.toggle('active');
+      shadow.classList.toggle('active');
 
-    if (coursesList.classList.contains('active')) {
-      document.querySelector('header').style.zIndex = '1';
-    } else {
-      setTimeout(() => {
-        document.querySelector('header').style.zIndex = '1000';
-      }, 600);
-    }
-  });
-  setInterval(() => {
-    if (window.innerWidth > 900) {
-      shadow.classList.remove('active');
-      titleBtn.classList.remove('active');
-      coursesList.classList.remove('active');
-    }
-  }, 100);
+      if (coursesList.classList.contains('active')) {
+        document.querySelector('header').style.zIndex = '1';
+      } else {
+        setTimeout(() => {
+          document.querySelector('header').style.zIndex = '1000';
+        }, 600);
+      }
+    });
+    setInterval(() => {
+      if (window.innerWidth > 900) {
+        shadow.classList.remove('active');
+        titleBtn.classList.remove('active');
+        coursesList.classList.remove('active');
+      }
+    }, 100);
+  } catch (e) {}
 });
 
 /***/ }),

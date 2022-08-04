@@ -1,5 +1,5 @@
 const langArr = {
-  "ua": {
+  "uk": {
     "header": {
       "blog": "Блог",
       "courses": "Курси",
@@ -9,7 +9,7 @@ const langArr = {
     },
 
     "main-page": {
-      "hero-title": "ITifico — платформа для вашого вивчення коду",
+      "hero-title": "<span>ITifico</span> — платформа для вашого вивчення коду",
       "hero-descr": "Курси для початківців і просунутих програмістів, а також цікаві статті. Приєднуйтесь і дозвольте нам підтримати вас у вашій кар’єрі",
       "hero-btn": "Call to action",
       "hero-scroll": "Гортай вниз",
@@ -75,7 +75,7 @@ const langArr = {
 
 
 
-  "eng": {
+  "en": {
     "header": {
       "blog": "Blog",
       "courses": "Courses",
@@ -85,7 +85,7 @@ const langArr = {
     },
 
     "main-page": {
-      "hero-title": "ITifico is a platform for your code learning",
+      "hero-title": "<span>ITifico</span> is a platform for your code learning",
       "hero-descr": "Courses for beginners and advanced programmers, as well as interesting articles. Join us and let us support you in your career",
       "hero-btn": "Call to action",
       "hero-scroll": "Scroll down",

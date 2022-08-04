@@ -6,6 +6,15 @@
     width: 50px;
     height: 32px;
   }
+  .breadcrumbs-list {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  .breadcrumbs-list__link {
+    white-space: nowrap;
+  }
 }
 
 @media screen and (max-width: 568px) { 

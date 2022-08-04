@@ -3219,7 +3219,8 @@ pre {
 
 @media screen and (max-width: 480px) {
   .course-article__subtitle {
-    font-size: 16px; }
+    font-size: 16px;
+    max-width: 200px; }
   .course-article__title {
     font-size: 24px; }
   .course-article__top {
@@ -3266,7 +3267,9 @@ pre {
   .course-practice__answer-text p {
     font-size: 14px; }
   .course-practice__answer-title {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .course-practice.open .course-practice__title::after {
+    top: 35%; } }
 
 @media screen and (max-width: 900px) {
   .course-aside__title {
@@ -3412,6 +3415,102 @@ pre {
   .courses-practice .course-practice__question:last-child {
     margin-bottom: 60px; }
 
+@media screen and (max-width: 1525px) {
+  .courses-practice__wrapper::before {
+    display: none; } }
+
+@media screen and (max-width: 900px) {
+  .courses-practice__inner {
+    flex-direction: column; }
+  .courses-practice__title--main {
+    margin-bottom: 40px; } }
+
+@media screen and (max-width: 768px) {
+  .courses-practice__num {
+    font-size: 60px;
+    margin-right: 20px; }
+  .courses-practice__num::before {
+    height: 80px;
+    width: 80px;
+    top: -11px;
+    right: -18px; }
+  .courses-practice__title--main {
+    margin-bottom: 30px; } }
+
+@media screen and (max-width: 660px) {
+  .courses-practice {
+    padding: 10px 0 100px; }
+  .courses-practice__title--main {
+    font-size: 40px; }
+  .courses-practice__title {
+    font-size: 30px; }
+  .courses-practice__subtitle {
+    font-size: 18px; }
+  .courses-practice__top {
+    margin-bottom: 40px; }
+  .courses-practice .course-practice__question-num {
+    font-size: 24px; }
+  .course-practice__question-text p {
+    font-size: 16px; }
+  .course-practice__answer-text p {
+    font-size: 14px; }
+  .courses-practice .course-practice__question:last-child {
+    margin-bottom: 40px; }
+  .courses-practice__btn {
+    width: 225px;
+    padding: 15px 80px 15px 20px; }
+  .courses-practice__btn::after {
+    right: 25px; }
+  .courses-practice__btn:hover::after {
+    right: 20px; } }
+
+@media screen and (max-width: 568px) {
+  .courses-practice {
+    padding: 10px 0 60px; } }
+
+@media screen and (max-width: 480px) {
+  .courses-practice__title--main {
+    font-size: 30px;
+    margin-bottom: 20px; }
+  .courses-practice__top {
+    position: relative; }
+  .courses-practice__title {
+    font-size: 24px; }
+  .courses-practice__subtitle {
+    font-size: 16px;
+    max-width: 200px; }
+  .courses-practice__num {
+    font-size: 40px;
+    position: absolute;
+    top: -12px;
+    right: 0;
+    margin-right: 5px; }
+  .courses-practice__num::before {
+    width: 60px;
+    height: 60px; }
+  .courses-practice .courses-practice__btn {
+    width: 100%;
+    padding: 12px 80px 12px 40px;
+    align-self: flex-start;
+    position: relative;
+    border: 2px solid #E36F59;
+    color: #E36F59;
+    background: #FFFFFF;
+    text-decoration: none; }
+  .courses-practice .courses-practice__btn:hover {
+    width: 100%;
+    padding: 12px 80px 12px 40px;
+    align-self: flex-start;
+    position: relative;
+    border: 2px solid #E36F59;
+    color: #FFFFFF;
+    background: #E36F59;
+    text-decoration: none; }
+  .courses-practice__btn::after {
+    right: 35px; }
+  .courses-practice__btn:hover::after {
+    right: 30px; } }
+
 @media screen and (max-width: 900px) {
   .header-inner {
     gap: 30px; }
@@ -3542,7 +3641,13 @@ pre {
     padding: 13px 77px 15px 20px; }
   .input-icon {
     width: 50px;
-    height: 32px; } }
+    height: 32px; }
+  .breadcrumbs-list {
+    overflow-x: auto; }
+    .breadcrumbs-list::-webkit-scrollbar {
+      width: 0; }
+  .breadcrumbs-list__link {
+    white-space: nowrap; } }
 
 @media screen and (max-width: 568px) {
   .pagination-list {

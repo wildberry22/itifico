@@ -44,6 +44,7 @@ export default function langChange() {
     
 
     document.querySelector('html').setAttribute('lang', hash);
+
     document.querySelector('#blog').innerHTML = langArr[hash]["header"]["blog"];
     document.querySelector('#courses').innerHTML = langArr[hash]["header"]["courses"];
     document.querySelector('#about').innerHTML = langArr[hash]["header"]["about"];

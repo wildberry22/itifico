@@ -43,4 +43,7 @@
   .course-practice__answer-title {
     font-size: $fz-6;
   }
+  .course-practice.open .course-practice__title::after {
+    top: 35%;
+  }
 }

@@ -27,6 +27,7 @@
 @media screen and (max-width: 480px) {
   .course-article__subtitle {
     font-size: $fz-6;
+    max-width: 200px;
   }
   .course-article__title {
     font-size: $fz-4;
