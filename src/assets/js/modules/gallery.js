@@ -3,7 +3,7 @@ import calcScroll from "./calcScroll.js";
 export default function gallery(imgWrapper) {
   if (imgWrapper) {
     const previewBox = document.querySelector('.preview-box');
-    const previewImg = previewBox.querySelector('img');
+    const previewImg = previewBox.querySelector('#main-img');
     const closeIcon = previewBox.querySelector('.icon');
     const currentImg = previewBox.querySelector('.current-img');
     const totalImg = previewBox.querySelector('.total-img');

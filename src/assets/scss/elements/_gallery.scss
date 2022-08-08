@@ -29,8 +29,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $red-color;
-      font-size: $fz-4;
       transition: .3s;
       cursor: pointer;
       &:hover {
@@ -58,22 +56,21 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 40px;
-      color: $white-color;
       cursor: pointer;
-      width: 60px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
+      width: 40px;
       z-index: 111;
       &.prev {
-        left: 0;
+        left: 10px;
       }
       &.next {
-        right: 0;
+        right: 10px;
+      }
+      img {
+        width: inherit;
+        user-select: none;
       }
     }
-    img {
+    #main-img {
       max-height: 660px;
       width: 100%;
       object-fit: cover;
