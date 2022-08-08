@@ -12,10 +12,8 @@ import langChange from './modules/langChange.js';
 
 
 // script for preloader
-const preloaderEl = document.querySelector('.preloader-bg');
-if(preloaderEl) {
-  window.addEventListener('load', preloader);
-}
+window.addEventListener('load', preloader);
+
 
 document.addEventListener("DOMContentLoaded", () => {
   
