@@ -1,13 +1,14 @@
+import calcScroll from "./calcScroll.js";
+
 export default function preloader() {
-  window.setTimeout(function () {
-    document.querySelector('body').style.overflowY = 'auto';
-    document.querySelector('html').style.overflowY = 'auto';
-    
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-      document.body.classList.remove('loaded_hiding');
-    }, 800);
-  }, 4200);
-  
+  const preloaderElem = document.querySelector('.preloader-bg');
+
+  document.querySelector('body').style.overflowY = 'auto';
+  document.querySelector('html').style.overflowY = 'auto';
+  document.querySelector('body').style.marginRight = '0';
+  preloaderElem.style.opacity = '0';
+  preloaderElem.style.paddingLeft = calcScroll() + 'px';
+  setTimeout(() => {
+    preloaderElem.style.display='none';
+  }, 500);
 }

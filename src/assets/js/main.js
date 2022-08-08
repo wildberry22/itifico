@@ -1,3 +1,4 @@
+import preloader from './modules/preloader.js';
 import stickyHeader from './modules/stickyHeader.js';
 import blogCardStyle from './modules/blogCardStyle.js';
 import coursesCardStyle from './modules/coursesCardStyle.js';
@@ -7,13 +8,13 @@ import forms from './modules/forms.js';
 import select from './modules/select.js';
 import gallery from './modules/gallery.js';
 import showHideContent from './modules/showHideContent.js';
-import preloader from './modules/preloader.js';
 import langChange from './modules/langChange.js';
 
 
 // script for preloader
-if(document.querySelector('.preloader')) {
-  preloader();
+const preloaderEl = document.querySelector('.preloader-bg');
+if(preloaderEl) {
+  window.addEventListener('load', preloader);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -171,14 +172,16 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch(e) {}
  
   // style breadcrumbs on small screans
-  if (window.innerWidth <= 568) {
-    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
-    link.innerHTML.length > 30 ? link.innerHTML = link.innerHTML.slice(0, 30) + '...' : link.innerHTML;
-  }
-  if (window.innerWidth <= 400) {
-    const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
-    link.innerHTML.length > 20 ? link.innerHTML = link.innerHTML.slice(0, 20) + '...' : link.innerHTML;
-  }
+  try {
+    if (window.innerWidth <= 568) {
+      const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+      link.innerHTML.length > 30 ? link.innerHTML = link.innerHTML.slice(0, 30) + '...' : link.innerHTML;
+    }
+    if (window.innerWidth <= 400) {
+      const link = document.querySelector('.breadcrumbs-list__item.active .breadcrumbs-list__link');
+      link.innerHTML.length > 20 ? link.innerHTML = link.innerHTML.slice(0, 20) + '...' : link.innerHTML;
+    }
+  } catch(e) {}
 
   // header adaptive menu
   const menuBtnEl = document.querySelector('.menu-btn');

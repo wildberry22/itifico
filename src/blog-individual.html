@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" style="overflow-y: hidden;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +24,47 @@
   <meta name="theme-color" content="#ffffff">
   <!-- ========== Title ========== -->
   <title>ITifico | Blog Individual</title>
+
+  <!-- ========== Preloader Styles ========== -->
+  <style>
+    .preloader-bg {
+      position: fixed;
+      z-index: 99999;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity .3s linear;
+      opacity: 1;
+    }
+    .preloader {
+      background: url('./img/preloader.gif') center center/cover no-repeat;
+      width: 250px;
+      height: 250px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .preloader {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+
   <!-- ========== Links ========== -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="overflow-y: hidden;">
+  <!-- ========== Preloader ========== -->
+  <div class="preloader-bg">
+    <div class="preloader"></div>
+  </div>
+
+
   <!-- ========== Header ========== -->
   <header class="header">
     <div class="container">
@@ -165,16 +200,16 @@
                     Ідейні міркування вищого порядку, а також подальший розвиток різних форм діяльності забезпечує широкому колу (фахівців) участь у формуванні позицій, займаних учасниками щодо поставлених завдань. Завдання організації, особливо ж консультація з широким активом є цікавий експеримент перевірки істотних фінансових і адміністративних умов. Не слід, однак забувати, що рамки і місце навчання кадрів вимагають від нас аналізу форм розвитку. Значимість цих проблем настільки очевидна, що консультація 
                   </p>
 
-                  <figure class="article-section__quote">
-                    <div class="article-section__quote-wrapper">
+                  <div class="article-section__quote">
+                    <figure class="article-section__quote-wrapper">
                       <figcaption class="article-section__quote-author">Звенигород Станіславський</figcaption>
                       <blockquote class="article-section__quote-text" cite="https://doinvest.dn.gov.ua/projects/ideyni-mirkuvannia-vyshchoho-poriadku/">
                         <p>
                           Ідейні міркування вищого порядку, а також подальший розвиток різних форм діяльності забезпечує широкому колу (фахівців) участь у формуванні позицій, займаних 
                         </p>
                       </blockquote>
-                    </div>
-                  </figure>
+                    </figure>
+                  </div>
 
                   <p class="article-section__text">
                     Ідейні міркування вищого порядку, а також подальший розвиток різних форм діяльності забезпечує широкому колу (фахівців) участь у формуванні позицій, займаних учасниками щодо поставлених завдань. Завдання організації, особливо ж консультація з широким активом є цікавий експеримент перевірки істотних фінансових і адміністративних умов. Не слід, однак забувати, що рамки і місце навчання кадрів вимагають від нас аналізу форм розвитку. Значимість цих проблем настільки очевидна, що консультація 
@@ -653,8 +688,8 @@
   <div class="preview-box">
     <div class="details">
       <span class="title-gallery">
-        Зображення <p class="current-img"></p>
-        з <p class="total-img"></p>
+        Зображення <span class="current-img"></span>
+        з <span class="total-img"></span>
       </span>
       <span class="icon fas fa-times"></span>
     </div>
@@ -665,7 +700,7 @@
       <div class="slide next">
         <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <img src="" alt="">
+      <img src="#" alt="#">
     </div>
     <div class="description"></div>
   </div>

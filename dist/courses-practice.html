@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" style="overflow-y: hidden;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,11 +24,46 @@
   <meta name="theme-color" content="#ffffff">
   <!-- ========== Title ========== -->
   <title>ITifico | Courses Practice</title>
+
+  <!-- ========== Preloader Styles ========== -->
+  <style>
+    .preloader-bg {
+      position: fixed;
+      z-index: 99999;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity .3s linear;
+      opacity: 1;
+    }
+    .preloader {
+      background: url('./img/preloader.gif') center center/cover no-repeat;
+      width: 250px;
+      height: 250px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .preloader {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+
   <!-- ========== Links ========== -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="overflow-y: hidden;">
+  <!-- ========== Preloader ========== -->
+  <div class="preloader-bg">
+    <div class="preloader"></div>
+  </div>
+
+
   <!-- ========== Header ========== -->
   <header class="header">
     <div class="container">
